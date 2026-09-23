@@ -9,6 +9,7 @@ Besides producing command text, every builder call is applied to a voxel
 model (numpy arrays of block id / metadata) so the finished mansion can be
 inspected, rendered and compared block-for-block with a real 1.8 server.
 """
+import math
 import re
 
 import numpy as np
@@ -104,6 +105,14 @@ def _relf(v):
     return '~' + s
 
 
+def _absf(v):
+    """Absolute float coordinate.  Always has a '.', because 1.8 adds 0.5 to a bare integer
+    x/z in /summon (block centring)."""
+    if abs(v - round(v)) < 1e-9:
+        return '%d.0' % int(round(v))
+    return ('%.5f' % v).rstrip('0')
+
+
 def nbt_needs_quotes(s):
     return bool(re.search(r'[,{}\[\]":]', s)) or s != s.strip()
 
@@ -126,6 +135,12 @@ class Cmd:
 
 # ------------------------------------------------------------ builder -------
 class Build:
+    # World transform for the server-console edition (see rotation.py).  None = legacy
+    # output: relative ~ coordinates from the command-block minecart at ORIGIN.  When set,
+    # commands are written with ABSOLUTE world coordinates and rotated metadata, while the
+    # voxel model (and every design/validation routine that reads it) stays in local coords.
+    xf = None
+
     def __init__(self, terrain=True):
         shape = (SX1 - SX0 + 1, SY1 - SY0 + 1, SZ1 - SZ0 + 1)
         self.ids = np.zeros(shape, dtype=np.int16)
@@ -137,6 +152,7 @@ class Build:
         self.touched = np.zeros(shape, dtype=bool)
         self.owner = np.full(shape, -1, dtype=np.int32)   # index of the command that wrote each cell last
         self.used = set()                                 # commands whose output was read (clone/keep/replace)
+        self.expects = []                                 # cells changed by the game itself (pistons)
         if terrain:
             # Test terrain: grass at y=-1, dirt -4..-2, stone below.
             self._box_set(SX0, SY0, SZ0, SX1, -5, SZ1, BLOCK_IDS['stone'], 0)
@@ -185,14 +201,31 @@ class Build:
     def rel(x, y, z):
         return '%s %s %s' % (_rel(x - ORIGIN[0]), _rel(y - ORIGIN[1]), _rel(z - ORIGIN[2]))
 
+    def pos(self, x, y, z):
+        """Block position text: relative (legacy) or absolute world (console edition)."""
+        if self.xf is None:
+            return self.rel(x, y, z)
+        return '%d %d %d' % self.xf.block(x, y, z)
+
+    def wmeta(self, block, meta):
+        return meta if self.xf is None else self.xf.rot_meta(block, meta)
+
+    def wnbt(self, block, meta, nbt):
+        return nbt if self.xf is None else self.xf.rot_nbt(block, meta, nbt)
+
+    def prekill(self, entity, wx, wy, wz, dy=0):
+        """Console edition: remove an earlier copy first, so a repeated stage never duplicates."""
+        self.emit('kill @e[type=%s,x=%d,y=%d,z=%d,dx=0,dy=%d,dz=0]' % (entity, wx, wy, wz, dy))
+
     # -- builders ----------------------------------------------------------
     def setblock(self, x, y, z, block, meta=0, nbt=None):
         bid = BLOCK_IDS[block]
-        t = 'setblock %s %s' % (self.rel(x, y, z), block)
-        if meta or nbt:
-            t += ' %d' % meta
-        if nbt:
-            t += ' replace ' + nbt
+        wm, wn = self.wmeta(block, meta), self.wnbt(block, meta, nbt)
+        t = 'setblock %s %s' % (self.pos(x, y, z), block)
+        if wm or wn:
+            t += ' %d' % wm
+        if wn:
+            t += ' replace ' + wn
         self.emit(t, 'set', (x, y, z, x, y, z), block)
         self._clear_te(x, y, z, x, y, z)
         self._box_set(x, y, z, x, y, z, bid, meta)
@@ -223,17 +256,18 @@ class Build:
                 self.fill(x1, y1, m + 1, x2, y2, z2, block, meta, mode, rblock, rmeta, nbt)
             return
         bid = BLOCK_IDS[block]
-        t = 'fill %s %s %s' % (self.rel(x1, y1, z1), self.rel(x2, y2, z2), block)
+        wm = self.wmeta(block, meta)
+        t = 'fill %s %s %s' % (self.pos(x1, y1, z1), self.pos(x2, y2, z2), block)
         if mode == 'replace' and rblock is not None:
-            t += ' %d replace %s' % (meta, rblock)
+            t += ' %d replace %s' % (wm, rblock)
             if rmeta is not None:
-                t += ' %d' % rmeta
+                t += ' %d' % self.wmeta(rblock, rmeta)
         elif mode:
-            t += ' %d %s' % (meta, mode)
+            t += ' %d %s' % (wm, mode)
             if nbt:
-                t += ' ' + nbt
-        elif meta:
-            t += ' %d' % meta
+                t += ' ' + self.wnbt(block, meta, nbt)
+        elif wm:
+            t += ' %d' % wm
         pure = mode is None or (mode == 'replace' and rblock is None) or mode == 'hollow'
         self.emit(t, 'set' if pure else 'raw', (x1, y1, z1, x2, y2, z2), block)
         me = len(self.cmds) - 1
@@ -294,7 +328,13 @@ class Build:
         sx, sy, sz = x2 - x1, y2 - y1, z2 - z1
         # overlap check
         ov = not (dx > x2 or dx + sx < x1 or dy > y2 or dy + sy < y1 or dz > z2 or dz + sz < z1)
-        t = 'clone %s %s %s' % (self.rel(x1, y1, z1), self.rel(x2, y2, z2), self.rel(dx, dy, dz))
+        if self.xf is None:
+            t = 'clone %s %s %s' % (self.rel(x1, y1, z1), self.rel(x2, y2, z2), self.rel(dx, dy, dz))
+        else:
+            # /clone's destination is the MIN corner of the target box; after the turn that
+            # corner comes from a different corner of the local box.
+            d = self.xf.box(dx, dy, dz, dx + sx, dy + sy, dz + sz)
+            t = 'clone %s %s %d %d %d' % (self.pos(x1, y1, z1), self.pos(x2, y2, z2), d[0], d[1], d[2])
         if mask != 'replace' or ov:
             t += ' ' + mask
         if ov:
@@ -324,12 +364,26 @@ class Build:
         for (kx, ky, kz), v in ste.items():
             self.te[(kx - x1 + dx, ky - y1 + dy, kz - z1 + dz)] = v
 
-    def summon(self, entity, fx, fy, fz, nbt=None):
-        """Summon at exact float coordinates (local). Minecart sits at +0.5,+0.0625,+0.5."""
-        ox, oy, oz = ORIGIN[0] + 0.5, ORIGIN[1] + 0.0625, ORIGIN[2] + 0.5
-        t = 'summon %s %s %s %s' % (entity, _relf(fx - ox), _relf(fy - oy), _relf(fz - oz))
-        if nbt:
-            t += ' ' + nbt
+    def summon(self, entity, fx, fy, fz, nbt=None, hang=None):
+        """Summon at exact float coordinates (local). Minecart sits at +0.5,+0.0625,+0.5.
+
+        `hang` = the hanging block of a painting / item frame (local), used by the console
+        edition to clear an earlier copy before summoning."""
+        if self.xf is None:
+            ox, oy, oz = ORIGIN[0] + 0.5, ORIGIN[1] + 0.0625, ORIGIN[2] + 0.5
+            t = 'summon %s %s %s %s' % (entity, _relf(fx - ox), _relf(fy - oy), _relf(fz - oz))
+            if nbt:
+                t += ' ' + nbt
+        else:
+            px, py, pz = self.xf.point(fx, fy, fz)
+            if hang is not None:
+                self.prekill(entity, *self.xf.block(*hang))
+            elif entity == 'ArmorStand':
+                self.prekill(entity, int(math.floor(px)), int(math.floor(py)), int(math.floor(pz)), dy=1)
+            t = 'summon %s %s %s %s' % (entity, _absf(px), _absf(py), _absf(pz))
+            nbt = self.xf.rot_entity_nbt(entity, nbt)
+            if nbt:
+                t += ' ' + nbt
         self.emit(t)
         self.entities.append((entity, (fx, fy, fz), nbt))
 
@@ -340,6 +394,25 @@ class Build:
         floor(T - c) where c is the painting centre offset; choose T so that
         T - c lands in the middle of the wanted block.
         """
+        if self.xf is not None:
+            # Console edition: work the formula out in WORLD space (world hanging block,
+            # turned facing).  Rotating the local target point instead is off by one block,
+            # because the +0.5 block-centre terms do not turn with the painting.
+            wx, wy, wz = self.xf.block(hx, hy, hz)
+            wf = self.xf.CW[facing]
+            tx, ty, tz = self._painting_target(wx, wy, wz, wf, w, h)
+            self.prekill('Painting', wx, wy, wz)
+            self.emit('summon Painting %s %s %s {Motive:%s,Facing:%d}' % (
+                _absf(tx), _absf(ty), _absf(tz), motive, {S: 0, W: 1, N: 2, E: 3}[wf]))
+        else:
+            tx, ty, tz = self._painting_target(hx, hy, hz, facing, w, h)
+            fidx = {S: 0, W: 1, N: 2, E: 3}[facing]
+            self.summon('Painting', tx, ty, tz, '{Motive:%s,Facing:%d}' % (motive, fidx))
+            self.entities.pop()
+        self.entities.append(('Painting', (hx, hy, hz), (motive, facing, w, h)))
+
+    @staticmethod
+    def _painting_target(hx, hy, hz, facing, w, h):
         fdx, _, fdz = DIRV[facing]
         ccw = DIRV[CCW[facing]]
         ws = 0.5 if (w * 16) % 32 == 0 else 0.0
@@ -347,10 +420,7 @@ class Build:
         cx = 0.5 - fdx * 0.46875 + ws * ccw[0]
         cy = 0.5 + hs
         cz = 0.5 - fdz * 0.46875 + ws * ccw[2]
-        tx, ty, tz = hx + 0.5 + cx, hy + 0.5 + cy, hz + 0.5 + cz
-        fidx = {S: 0, W: 1, N: 2, E: 3}[facing]
-        self.summon('Painting', tx, ty, tz, '{Motive:%s,Facing:%d}' % (motive, fidx))
-        self.entities[-1] = ('Painting', (hx, hy, hz), (motive, facing, w, h))
+        return hx + 0.5 + cx, hy + 0.5 + cy, hz + 0.5 + cz
 
     def raw(self, text):
         self.emit(text)
@@ -359,5 +429,6 @@ class Build:
         """Update the model only (for block changes the game makes by itself, e.g. pistons)."""
         o = int(self.owner[self._idx(x, y, z)])
         self.used.add(o)
+        self.expects.append((x, y, z))
         self._box_set(x, y, z, x, y, z, BLOCK_IDS[block], meta)
         self.owner[self._idx(x, y, z)] = o

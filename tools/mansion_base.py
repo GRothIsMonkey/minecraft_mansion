@@ -93,7 +93,7 @@ class MB(Build):
         """Item frame hanging in block (hx,hy,hz) on the wall behind it (1.8: hanging = floor(pos))."""
         fidx = {S: 0, W: 1, N: 2, E: 3}[facing]
         self.summon('ItemFrame', hx + X0 + 0.5, hy + 0.0625, hz + Z0 + 0.5,
-                    '{Facing:%d,Item:{id:%s,Count:1b}}' % (fidx, item))
+                    '{Facing:%d,Item:{id:%s,Count:1b}}' % (fidx, item), hang=(hx + X0, hy, hz + Z0))
         self.entities[-1] = ('ItemFrame', (hx + X0, hy, hz + Z0), (item, facing))
 
     def SUM(self, entity, fx, fy, fz, nbt=None):

@@ -1,0 +1,172 @@
+{
+ "entrance": [
+  -251,
+  73,
+  267
+ ],
+ "build_box": [
+  -309,
+  62,
+  226,
+  -227,
+  118,
+  308
+ ],
+ "pad": [
+  -221,
+  124,
+  267
+ ],
+ "stand": [
+  -225,
+  73,
+  267
+ ],
+ "min_view_distance": 6,
+ "stages": [
+  {
+   "file": "console_01.txt",
+   "chars": 29,
+   "sha1": "c046b411c7a91d88a193b669be1ff9d9f283fc7c",
+   "expect": "Block placed"
+  },
+  {
+   "file": "console_02.txt",
+   "chars": 2634,
+   "sha1": "bc33d45c42dd8dd8027322366ff4af9603b52f4b",
+   "expect": "[Installer] Mansion Console Stage 2/24 complete. Next: paste console_03.txt"
+  },
+  {
+   "file": "console_03.txt",
+   "chars": 1902,
+   "sha1": "af43f1c6b9fa584af840a9ec96d62a7c3b2de708",
+   "expect": "[Installer] Mansion Console Stage 3/24 complete. Next: paste console_04.txt"
+  },
+  {
+   "file": "console_04.txt",
+   "chars": 2384,
+   "sha1": "e937cd638c0b35ce8fb8965c17823be8970b804f",
+   "expect": "[Installer] Mansion Console Stage 4/24 complete. Next: paste console_05.txt"
+  },
+  {
+   "file": "console_05.txt",
+   "chars": 15869,
+   "sha1": "c0d6971ed7edd0a1e74c09a4fa6e904c0181fbd0",
+   "expect": "[Installer] Mansion Console Stage 5/24 complete. Next: paste console_06.txt"
+  },
+  {
+   "file": "console_06.txt",
+   "chars": 15915,
+   "sha1": "455f181b64e7cebb8b7ff8b9905697fc0ee06f65",
+   "expect": "[Installer] Mansion Console Stage 6/24 complete. Next: paste console_07.txt"
+  },
+  {
+   "file": "console_07.txt",
+   "chars": 15855,
+   "sha1": "83c505ec84acde0b06cd1358ab7d77c3eda1802f",
+   "expect": "[Installer] Mansion Console Stage 7/24 complete. Next: paste console_08.txt"
+  },
+  {
+   "file": "console_08.txt",
+   "chars": 15879,
+   "sha1": "9fb73dbbb9f9fa75c9ec3b10b6c1d32bfaed90ca",
+   "expect": "[Installer] Mansion Console Stage 8/24 complete. Next: paste console_09.txt"
+  },
+  {
+   "file": "console_09.txt",
+   "chars": 15848,
+   "sha1": "8131cea486ad51a56d506c4d86d6cecdf2b8bfa3",
+   "expect": "[Installer] Mansion Console Stage 9/24 complete. Next: paste console_10.txt"
+  },
+  {
+   "file": "console_10.txt",
+   "chars": 15907,
+   "sha1": "752089d5c4a59157bcb1516dcf8628eaf1350b67",
+   "expect": "[Installer] Mansion Console Stage 10/24 complete. Next: paste console_11.txt"
+  },
+  {
+   "file": "console_11.txt",
+   "chars": 15861,
+   "sha1": "06c52eb20c40dd296396e89c36b1388d6ad5ce53",
+   "expect": "[Installer] Mansion Console Stage 11/24 complete. Next: paste console_12.txt"
+  },
+  {
+   "file": "console_12.txt",
+   "chars": 15768,
+   "sha1": "27918b3c16737d3a18db6abee8db218c05078325",
+   "expect": "[Installer] Mansion Console Stage 12/24 complete. Next: paste console_13.txt"
+  },
+  {
+   "file": "console_13.txt",
+   "chars": 15719,
+   "sha1": "92c41ea4968b5c0fde84de789ff1f73a119bc684",
+   "expect": "[Installer] Mansion Console Stage 13/24 complete. Next: paste console_14.txt"
+  },
+  {
+   "file": "console_14.txt",
+   "chars": 15919,
+   "sha1": "efbbda4d6838f9187856d4146a0b2102f9a9c794",
+   "expect": "[Installer] Mansion Console Stage 14/24 complete. Next: paste console_15.txt"
+  },
+  {
+   "file": "console_15.txt",
+   "chars": 15872,
+   "sha1": "3b6f6e0a0837bbe65857052c180886b09617fe1c",
+   "expect": "[Installer] Mansion Console Stage 15/24 complete. Next: paste console_16.txt"
+  },
+  {
+   "file": "console_16.txt",
+   "chars": 15873,
+   "sha1": "296e3b3b45d9a1f6f92ec58659be363171693faf",
+   "expect": "[Installer] Mansion Console Stage 16/24 complete. Next: paste console_17.txt"
+  },
+  {
+   "file": "console_17.txt",
+   "chars": 15882,
+   "sha1": "61275f8b2580505bfbc119276465d8bd4e2f0f18",
+   "expect": "[Installer] Mansion Console Stage 17/24 complete. Next: paste console_18.txt"
+  },
+  {
+   "file": "console_18.txt",
+   "chars": 15868,
+   "sha1": "3f788632293656bc663dbe0bbafc09a2a09e24da",
+   "expect": "[Installer] Mansion Console Stage 18/24 complete. Next: paste console_19.txt"
+  },
+  {
+   "file": "console_19.txt",
+   "chars": 15835,
+   "sha1": "3a437ad64049e95d1d19e96e2fe3115ea4a92a69",
+   "expect": "[Installer] Mansion Console Stage 19/24 complete. Next: paste console_20.txt"
+  },
+  {
+   "file": "console_20.txt",
+   "chars": 15886,
+   "sha1": "ba51316a2a0efa855d5359ebb227819558033e06",
+   "expect": "[Installer] Mansion Console Stage 20/24 complete. Next: paste console_21.txt"
+  },
+  {
+   "file": "console_21.txt",
+   "chars": 15899,
+   "sha1": "179fa095bd2ec3449fc5964af1855c863e97cd30",
+   "expect": "[Installer] Mansion Console Stage 21/24 complete. Next: paste console_22.txt"
+  },
+  {
+   "file": "console_22.txt",
+   "chars": 15867,
+   "sha1": "30b17583f6af0d338228dcede8380ebfc8661d82",
+   "expect": "[Installer] Mansion Console Stage 22/24 complete. Next: paste console_23.txt"
+  },
+  {
+   "file": "console_23.txt",
+   "chars": 15866,
+   "sha1": "3eca021f91a009430f4889f97505caf9ce40b30a",
+   "expect": "[Installer] Mansion Console Stage 23/24 complete. Next: paste console_24.txt"
+  },
+  {
+   "file": "console_24.txt",
+   "chars": 7459,
+   "sha1": "91f852e33f5b08b84ba51007636ddf9f11e8125f",
+   "expect": "[Installer] Mansion Console Stage 24/24 complete. Mansion construction complete."
+  }
+ ]
+}
