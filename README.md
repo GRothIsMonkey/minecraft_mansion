@@ -1,0 +1,58 @@
+# Ashgrove Manor — command-block mansion for Minecraft Java 1.8 / 1.8.9
+
+![Ashgrove Manor, north-west view](docs/preview_nw.png)
+
+A large, fully furnished Victorian manor that builds itself from a **single command block**.
+It uses only vanilla Java Edition 1.8.0–1.8.9 features: no mods, datapacks, functions or
+structure blocks. You paste **9 commands in turn** into the same command block and press a
+button after each one.
+
+* **Size:** a 62 × 41 main house with a basement, three floors, two towers, an attic and a roof walk. The grounds cover an 83 × 83 plot.
+* **Rooms:** about 60, all furnished and lit, with no dark spots where mobs could spawn.
+* **Secrets:** 8 secret places, including two working piston doors, a hidden vault and an escape tunnel that comes out in a garden well.
+* **Testing:** the build was run on real 1.8.0 and 1.8.9 servers and compared block by block with the design, with 0 wrong blocks.
+
+**Full instructions, all 9 commands, the floor plans, the secrets (with spoilers) and the validation
+report are in [MANSION.md](MANSION.md).**
+
+## Quick start
+
+1. Stand at the north-west corner of a flat area at least 90 × 90 blocks. The house is built toward **+X (east) and +Z (south)**.
+2. Run `/give @p command_block` and place the block on the ground. Put a stone button on its north or west face.
+3. Paste [`commands/command_01.txt`](commands/command_01.txt) into the command block, click Done and press the button.
+4. Wait for the chat message that says the stage is complete. Then paste the next file (`command_02.txt` … `command_09.txt`) into the **same** block and press the button again.
+5. After command 9 the installer removes itself and your command block.
+
+Each file is a single line of about 32,700 characters. Open the file, click **Raw**, select everything and copy.
+
+| | |
+|---|---|
+| ![south-east view](docs/preview_se.png) | ![ground floor plan](docs/plan_F1.png) |
+
+## Repository layout
+
+| Path | What it is |
+|---|---|
+| `MANSION.md` | The deliverable: Parts 1–7 (notes, installation, all commands, floor plan, secrets, validation) |
+| `commands/command_NN.txt` | The 9 paste-ready commands, one per file |
+| `docs/` | Rendered views and floor plans |
+| `tools/` | The generator (Python 3; needs `numpy`, `scipy` and `pillow`) |
+
+## Rebuilding / checking
+
+```
+cd tools
+python3 check.py        # voxel model: supports, fire safety, walkability (both ways), lighting
+python3 export.py       # regenerates commands/, docs/ and MANSION.md
+python3 final_test.py <server-dir>   # runs commands/*.txt on a real 1.8.x server jar and diffs the world
+```
+
+The design is written as Python modules:
+
+* `exterior.py`, `facades.py` and `roofs.py`: the outside of the house.
+* `interior_f1.py`, `interior_f2.py`, `interior_f3.py` and `basement.py`: the rooms.
+* `landscape.py`: the grounds.
+
+`engine.py` turns each placement into a relative `/fill`, `/setblock`, `/clone` or `/summon` command and
+keeps a voxel model of the result. `packer.py` packs the commands into 1.8 minecart piles of at most
+32,700 characters each.
