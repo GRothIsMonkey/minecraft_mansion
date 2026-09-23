@@ -55,9 +55,13 @@ Each file is a single line of about 32,700 characters. Open the file, click **Ra
 | `CONSOLE_INSTALL.md` | Server-console edition: installation guide, world coordinates, tests |
 | `commands_console/console_NN.txt` | The 22 server-console lines (plus `manifest.json` with the expected replies) |
 | `docs/` | Rendered views and floor plans |
-| `tools/` | The generator (Python 3; needs `numpy`, `scipy` and `pillow`) |
+| `tools/` | The generator (Python 3; `pip install -r requirements.txt`) |
+| `AGENTS.md` | Handoff notes for developers / AI agents: setup, commands, architecture, rules |
 
 ## Rebuilding / checking
+
+Developers and AI agents: start with [AGENTS.md](AGENTS.md). Setup is `pip install -r requirements.txt`
+and, for the real-server tests, `tools/setup_servers.sh` (downloads the vanilla 1.8.9 and 1.8.0 server jars).
 
 ```
 cd tools

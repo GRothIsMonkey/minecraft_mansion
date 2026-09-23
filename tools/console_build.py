@@ -29,9 +29,11 @@ from engine import esc, nbt_needs_quotes   # noqa: E402
 ENTRANCE = R.ENTRANCE                          # (-251, 73, 267): centre of the front doors, lawn feet level
 LOCAL_BOX = (2, -11, 2, 84, 45, 84)            # everything the build writes (local coords, checked)
 BUILD_BOX = R.box(*LOCAL_BOX)                  # world (x1,y1,z1,x2,y2,z2)
-PAD = (-221, 124, 267)                         # landing pad (bedrock) for the installer
+# Installer pad and stand point follow the entrance (so moving ENTRANCE in rotation.py moves them):
+# pad 30 blocks east of the door plane, 6 above the top of the build; stand 26 east, on the lawn.
+PAD = (ENTRANCE[0] + 30, BUILD_BOX[4] + 6, ENTRANCE[2])   # (-221, 124, 267): bedrock landing pad
 COLUMN = (PAD[0], PAD[1] + 1, PAD[2], PAD[0] + 2, PAD[1] + 3, PAD[2])   # stage cb, redstone, rail + cleanup blocks
-STAND = (-225, 73, 267)                        # where the player waits (feet), just east of the site
+STAND = (ENTRANCE[0] + 26, ENTRANCE[1], ENTRANCE[2])     # (-225, 73, 267): where the player waits
 MIN_VIEW_DISTANCE = 6                          # server.properties view-distance needed at STAND
 LIMIT = 16000                                  # max characters per console paste (well below every limit)
 COST_CAP = 4.0                                 # max measured server seconds of work per stage (console_costs.json)
