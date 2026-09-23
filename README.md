@@ -15,6 +15,25 @@ button after each one.
 **Full instructions, all 9 commands, the floor plans, the secrets (with spoilers) and the validation
 report are in [MANSION.md](MANSION.md).**
 
+## ⭐ Recommended: the Spigot/Bukkit 1.8.8 plugin (final Claude + Astra mansion)
+
+**[`AshgroveManor-1.0.0.jar`](AshgroveManor-1.0.0.jar)**. Upload it to your server's `plugins` folder,
+restart, and type `mansion build` and then `mansion confirm` in the console. That's it: no long commands
+(nothing over 15 characters), no command blocks and no standing spot.
+
+* It builds the **finished** mansion (Claude's base and Astra's refurbishment, final source commit
+  `4be5b07`), front entrance **-251 73 267**, facing **east**, in about 10 seconds. Then it checks
+  all 348,046 blocks against the design.
+* Tested on real Spigot 1.8.8 with Java 8 and Java 21, on flat and hilly worlds, with a crash in the
+  middle of a build, and with `enable-command-block=false`. The world it builds is **identical** to the
+  world built by the tested 34-stage console installation: every block, every chest's contents, every
+  sign and entity.
+
+**Instructions, commands, recovery and test results: [PLUGIN_INSTALL.md](PLUGIN_INSTALL.md).**
+
+The older installers below are kept and still work, but on a console that cuts lines at 256 characters
+(EaglerHost) only the plugin works.
+
 ## Server-console edition (install from your hosting dashboard)
 
 The same mansion, placed at fixed world coordinates for a server you administer and installed by pasting
@@ -69,6 +88,8 @@ Each file is a single line of about 32,700 characters. Open the file, click **Ra
 | `commands_console/console_NN.txt` | The 22 server-console lines (plus `manifest.json` with the expected replies) |
 | `docs/` | Rendered views and floor plans |
 | `tools/` | The generator (Python 3; `pip install -r requirements.txt`) |
+| `PLUGIN_INSTALL.md`, `AshgroveManor-1.0.0.jar` | The Spigot/Bukkit 1.8.8 plugin edition (current) |
+| `plugin/` | Plugin source (Java 8) and its data (`plugin/src/main/resources/ashgrove/`) |
 | `AGENTS.md` | Handoff notes for developers / AI agents: setup, commands, architecture, rules |
 
 ## Rebuilding / checking

@@ -25,6 +25,42 @@ cannot comfortably paste huge text into an in-game command block. Their requirem
 * Temporary installer machinery removes itself. Progress messages read
   `[Installer] Mansion Console Stage k/24 complete ...`.
 
+## Plugin edition (current, since the Astra refurbishment)
+
+The owner's EaglerHost web console cuts every command at **256 characters**, so neither console
+installer can be used there. The current deliverable is **`AshgroveManor-1.0.0.jar`**, a Bukkit/Spigot
+1.8.8 plugin (guide: `PLUGIN_INSTALL.md`). The source of truth is the final Claude + Astra snapshot,
+commit `4be5b07`, imported unchanged in commit `f718530` (the owner's commit was never pushed; it came
+as a zip).
+
+* `tools/plugin_export.py` assembles the final design (`astra_design.assemble()`). It re-packs the
+  command list into the 34 console files and aborts unless all 34 match `FINAL_MANIFEST.json`. Then it
+  writes `plugin/src/main/resources/ashgrove/`:
+  * `commands.txt`: 3356 base + 1162 Astra commands, in order;
+  * `expected.bin.gz`: the final block state of the build box, for the plugin's own check;
+  * `manifest.json`: counts, SHA-256s, coordinates and the expected entities.
+* `tools/build_plugin.sh [spigot-api-shaded.jar]` runs the exporter and compiles `plugin/src/main/java`
+  with `javac --release 8` → `AshgroveManor-<version>.jar`. The API jar comes from BuildTools
+  (`java8 -jar BuildTools.jar --rev 1.8.8`; BuildTools needs Java 8 for 1.8.8), which also gives the
+  `spigot-1.8.8.jar` test server.
+* The plugin (`plugin/src/main/java/com/ashgrove/manor/`) runs every command with `minecraft:` prefix
+  via `Bukkit.dispatchCommand`. The sender is a command-block minecart summoned with the vanilla
+  command, because Bukkit 1.8.8 `World.spawn(CommandMinecart)` creates a plain minecart. It pins the
+  chunks itself, sets two gamerules off and back to their old values, runs the base item sweep after
+  command 3356, and verifies the result.
+* **Key property (do not break):** every one of the 348,046 written cells is first set by an
+  unconditional fill/setblock before any conditional command (keep, filtered replace, masked clone,
+  Astra's filters) reads it. So a full run gives exactly the design on any terrain and over any
+  half-built state. That is why `mansion resume` restarts from command 0. `plugin_export.py`
+  (`check_determined`) refuses to export if a design change breaks it.
+* Tests: `tools/plugin_test.py <spigot-dir> [flat|terrain] [--no-functional] [--crash]` (env
+  `MC_JAVA`, `MC_PORT`, `MC_EXTRA_PROPS`), and `tools/plugin_compare.py <ref-world> <plugin-world>` for a
+  world-to-world comparison including tile-entity NBT. Reports: `docs/plugin_tests/`. At handoff: flat
+  39/39, terrain 13/13, crash+resume 17/17, `enable-command-block=false` 16/16, and identical to the
+  vanilla 34-stage console world (1,238,593 blocks, 227 tile entities, 25 entities).
+* If the design ever changes: re-run `plugin_export.py` (through `build_plugin.sh`), bump the version in
+  `plugin.yml`, re-run all four plugin tests and the comparison, and update `PLUGIN_INSTALL.md`.
+
 ## Setup
 
 ```bash

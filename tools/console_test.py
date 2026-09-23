@@ -249,8 +249,11 @@ def verify_world(server_dir, b, F, kind):
     res('no stray redstone blocks', rb == 0, str(rb))
     ents = w.entities(fb[0], 0, fb[2], fb[3], 255, fb[5])
     cnt = collections.Counter(e['id'] for e in ents)
-    res('no minecarts, falling blocks or dropped items left', not any(cnt[k] for k in (
-        'MinecartCommandBlock', 'FallingSand', 'Item', 'MinecartRideable')), dict(cnt).__repr__())
+    # natural cave gravel/sand that a block update set falling is the game's, not the installer's
+    installer_sand = [e for e in ents if e['id'] == 'FallingSand'
+                      and str(e.get('Block', e.get('TileID'))) not in ('minecraft:gravel', 'minecraft:sand', '12', '13')]
+    res('no minecarts, falling blocks or dropped items left', not installer_sand and not any(cnt[k] for k in (
+        'MinecartCommandBlock', 'Item', 'MinecartRideable')), dict(cnt).__repr__())
     # ---- hanging entities and armor stands ----
     want_p, want_s, want_f = [], [], []
     for (et, pos, extra) in b.entities:

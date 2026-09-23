@@ -1,0 +1,92 @@
+{
+ "info": {
+  "jar": "AshgroveManor-1.0.0.jar",
+  "server": "This server is running CraftBukkit version git-Spigot-3c60ece-741a1bd (MC: 1.8.8) (Implementing API version 1.8.8-R0.1-SNAPSHOT)",
+  "build_secs": 10.6,
+  "plugin_check": "[AshgroveManor] OK: 348,046 of 348,046 built blocks match the design; paintings 16/16, item frame 1/1, armor stands 8/8",
+  "plugin_log": [
+   "[AshgroveManor] Building started: 4518 commands. Players may notice short pauses while the big walls go up.",
+   "[AshgroveManor] Building... 1/4518 commands (0%)",
+   "[AshgroveManor] Building... 551/4518 commands (12%)",
+   "[AshgroveManor] Building... 917/4518 commands (20%)",
+   "[AshgroveManor] Building... 1374/4518 commands (30%)",
+   "[AshgroveManor] Building... 1939/4518 commands (42%)",
+   "[AshgroveManor] Building... 2494/4518 commands (55%)",
+   "[AshgroveManor] Building... 2848/4518 commands (63%)",
+   "[AshgroveManor] Building... 3208/4518 commands (71%)",
+   "[AshgroveManor] Building... 3753/4518 commands (83%)",
+   "[AshgroveManor] Building... 4283/4518 commands (94%)",
+   "[AshgroveManor] Mansion construction complete. Checking it block by block now...",
+   "[AshgroveManor] OK: 348,046 of 348,046 built blocks match the design; paintings 16/16, item frame 1/1, armor stands 8/8"
+  ],
+  "lag": [],
+  "console_lines_during_build": 14
+ },
+ "results": [
+  [
+   "plugin loads on the server",
+   true,
+   "[AshgroveManor] Ashgrove Manor ready: 4518 build commands (3356 base + 1162 Astra). Entrance -251 73 267, facing east."
+  ],
+  [
+   "the plugin's own check reports the design exactly",
+   true,
+   "[AshgroveManor] OK: 348,046 of 348,046 built blocks match the design; paintings 16/16, item frame 1/1, armor stands 8/8"
+  ],
+  [
+   "no errors or exceptions in the server log",
+   true,
+   ""
+  ],
+  [
+   "gamerules back to their previous values",
+   true,
+   "['commandBlockOutput = true', 'logAdminCommands = true', '[Ashgrove] State: complete, command 4518/4518 (100%).', '[Ashgrove] Last check: OK: 348,046 of 348,046 built blocks match the design; paintings 16/16, item frame 1/1, armor stands 8/8', '[Server] sync1790189178814947657']"
+  ],
+  [
+   "every block the build writes matches the design (natural terrain around it)",
+   true,
+   "0 mismatches []"
+  ],
+  [
+   "no water or lava flowed into the cleared site from the terrain around it",
+   true,
+   "0 liquid blocks, e.g. []"
+  ],
+  [
+   "installer pad and column removed (air from Y 123 to 131)",
+   true,
+   "[]"
+  ],
+  [
+   "no command block left except the laboratory prop",
+   true,
+   "[(-263, 69, 271)]"
+  ],
+  [
+   "no stray redstone blocks",
+   true,
+   "0"
+  ],
+  [
+   "no minecarts, falling blocks or dropped items left",
+   true,
+   "{'ArmorStand': 8, 'Painting': 16, 'ItemFrame': 1}"
+  ],
+  [
+   "all 16 paintings hang where designed, facing the rotated way",
+   true,
+   "missing [] extra []"
+  ],
+  [
+   "item frame in place and facing correctly",
+   true,
+   "[((-269, 93, 278), 'minecraft:clock', 2)] vs [((-269, 93, 278), 'minecraft:clock', 2)]"
+  ],
+  [
+   "all 8 armor stands in place with rotated yaw",
+   true,
+   "[((-284.5, 76.0, 254.5), 270.0), ((-284.5, 76.0, 257.5), 270.0), ((-272.5, 91.0, 266.5), 90.0)]"
+  ]
+ ]
+}

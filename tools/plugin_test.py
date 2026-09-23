@@ -34,6 +34,11 @@ from mcserver import Server            # noqa: E402
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
+def props(kind):
+    # MC_EXTRA_PROPS, e.g. 'enable-command-block=false', is appended last (later keys win)
+    return CT.props(kind) + os.environ.get('MC_EXTRA_PROPS', '').replace(';', '\n') + '\n'
+
+
 def install_plugin(server_dir):
     plugins = os.path.join(server_dir, 'plugins')
     os.makedirs(plugins, exist_ok=True)
@@ -52,7 +57,7 @@ def build(server_dir, kind, crash=False):
     shutil.copytree(tpl, os.path.join(server_dir, 'world'))
     jar = install_plugin(server_dir)
     out = {'jar': jar}
-    s = Server(server_dir, fresh=False, props_extra=CT.props(kind))
+    s = Server(server_dir, fresh=False, props_extra=props(kind))
     s.start()
     try:
         ver = [l for l in s.lines if 'This server is running' in l or 'server version' in l]
@@ -71,7 +76,7 @@ def build(server_dir, kind, crash=False):
             s.p.kill()                                   # like a host crash: no clean shutdown
             s.p.wait()
             out['crashed_at'] = [l for l in s.lines if 'Building...' in l][-1].split(']: ', 1)[-1]
-            s = Server(server_dir, fresh=False, props_extra=CT.props(kind))
+            s = Server(server_dir, fresh=False, props_extra=props(kind))
             s.start()
             warn = [l for l in s.lines if 'was interrupted' in l]
             CT.res('after the crash the plugin reports the interrupted build', bool(warn),
@@ -88,8 +93,10 @@ def build(server_dir, kind, crash=False):
                              or l.strip().startswith('[') is False]
         out['lag'] = [l.split(']: ', 1)[-1] for l in lines if "Can't keep up" in l]
         out['console_lines_during_build'] = len([l for l in lines if 'sync' not in l])
-        CT.res("the plugin's own check reports the design exactly", line.split(']: ', 1)[-1].startswith(
-            'OK: 348,046 of 348,046'), out['plugin_check'])
+        CT.res("the plugin's own check reports the design exactly",
+               'OK: 348,046 of 348,046 built blocks match the design; paintings 16/16, item frame 1/1, armor stands'
+               ' 8/8' in line, out['plugin_check'])
+        s.wait_ticks(200)       # let hanging entities re-check and natural cave gravel finish falling
         errs = [l for l in s.lines if re.search(r'Exception|ERROR|SEVERE|Command failed|refused', l)]
         CT.res('no errors or exceptions in the server log', not errs, '; '.join(errs[:3]))
         m = s.mark()
@@ -122,6 +129,8 @@ def main():
     print('\nRESULT: %d passed, %d failed' % (len(CT.RESULTS) - len(fails), len(fails)))
     os.makedirs(os.path.join(ROOT, 'out'), exist_ok=True)
     name = 'plugin_test_%s_%s%s.json' % (os.path.basename(server_dir.rstrip('/')), kind, '_crash' if crash else '')
+    info['extra_props'] = os.environ.get('MC_EXTRA_PROPS', '')
+    info['java'] = os.environ.get('MC_JAVA', 'java')
     with open(os.path.join(ROOT, 'out', name), 'w') as fh:
         json.dump({'info': info, 'results': CT.RESULTS}, fh, indent=1)
     return not fails

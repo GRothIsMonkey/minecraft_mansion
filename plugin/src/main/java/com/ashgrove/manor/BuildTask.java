@@ -31,7 +31,7 @@ final class BuildTask extends BukkitRunnable {
         this.world = world;
         this.cart = cart;
         this.requester = requester;
-        this.sender = cart;
+        this.sender = cart != null ? cart : Bukkit.getConsoleSender();
         this.index = from;
     }
 
@@ -71,7 +71,7 @@ final class BuildTask extends BukkitRunnable {
         try {
             Bukkit.dispatchCommand(sender, line);
         } catch (RuntimeException e) {
-            if (sender == cart) {
+            if (cart != null && sender == cart) {
                 // a server that cannot run vanilla commands from a minecart: use the console
                 plugin.getLogger().warning("Minecart command sender refused (" + e + "); using the console. "
                         + "The console will show one line per build command.");

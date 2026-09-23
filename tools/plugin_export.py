@@ -59,6 +59,34 @@ def verify_against_shipped(base, b):
     return len(fm['stages'])
 
 
+def check_determined(b):
+    """Every written cell must be set by an unconditional write before any command reads it
+    (keep / filtered replace / clone source or masked destination). Then a full run gives exactly
+    the design on any terrain and over any half-built state, which the plugin's resume relies on."""
+    det = np.zeros(b.ids.shape, bool)
+
+    def sl(x1, y1, z1, x2, y2, z2):
+        return (slice(min(x1, x2) - SX0, max(x1, x2) - SX0 + 1), slice(min(y1, y2) - SY0, max(y1, y2) - SY0 + 1),
+                slice(min(z1, z2) - SZ0, max(z1, z2) - SZ0 + 1))
+    bad = []
+    for c in b.cmds:
+        t = c.text.split()
+        if t[0] in ('summon', 'kill'):
+            continue
+        if t[0] == 'clone':
+            src = sl(*R.to_local(*map(int, t[1:4])), *R.to_local(*map(int, t[4:7])))
+            if not det[src].all() or ('masked' in t and not det[sl(*c.box)].all()):
+                bad.append(c.text)
+            det[sl(*c.box)] = True
+        elif t[0] == 'setblock' or len(t) <= 9 or t[9] in ('destroy', 'hollow') \
+                or (t[9] == 'replace' and len(t) == 10):
+            det[sl(*c.box)] = True
+        elif not det[sl(*c.box)].all():          # keep / replace <block> / outline
+            bad.append(c.text)
+    if bad or not det[b.touched].all():
+        raise SystemExit('%d commands read cells the build has not set yet, e.g. %s' % (len(bad), bad[:3]))
+
+
 def expected_cells(b):
     F = R.rotated_frame(b)
     rot_touched = R.rotate_arrays(b.touched.astype(np.int8), np.zeros_like(b.meta))[0].astype(bool)
@@ -90,6 +118,7 @@ def expected_cells(b):
 def main():
     base, b = D.assemble()
     n_files = verify_against_shipped(base, b)
+    check_determined(b)
     cmds = [c.text for c in b.cmds]
     assert all(all(32 <= ord(ch) < 127 for ch in c) and '~' not in c for c in cmds)
     os.makedirs(OUT, exist_ok=True)

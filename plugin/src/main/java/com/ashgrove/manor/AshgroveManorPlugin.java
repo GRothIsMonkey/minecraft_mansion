@@ -249,14 +249,11 @@ public final class AshgroveManorPlugin extends JavaPlugin implements Listener {
     }
 
     World targetWorld(CommandSender sender) {
-        String name = getConfig().getString("world", "");
-        World w = name == null || name.isEmpty() ? Bukkit.getWorlds().get(0) : Bukkit.getWorld(name);
-        if (w == null) {
-            sender.sendMessage(P + "World '" + name + "' is not loaded. Check config.yml.");
-            return null;
-        }
+        // Always the server's main world (level-name in server.properties): vanilla commands from
+        // the console, which the installer minecart is summoned with, act on that world.
+        World w = Bukkit.getWorlds().get(0);
         if (w.getEnvironment() != World.Environment.NORMAL) {
-            sender.sendMessage(P + "World '" + w.getName() + "' is not an overworld. Check config.yml.");
+            sender.sendMessage(P + "The main world '" + w.getName() + "' is not an overworld.");
             return null;
         }
         return w;
@@ -279,9 +276,21 @@ public final class AshgroveManorPlugin extends JavaPlugin implements Listener {
         w.setGameRuleValue("commandBlockOutput", "false");
         pinChunks(w);
         removeStaleCarts(w);
-        CommandMinecart cart = w.spawn(new Location(w, entrance[0] + 30.5, box[4] + 7, entrance[2] + 0.5),
-                CommandMinecart.class);
-        cart.setCustomName(CART_NAME);
+        // Bukkit 1.8.8 cannot spawn a command-block minecart (World.spawn makes a plain minecart),
+        // so summon it with the vanilla command, in the air east of the site, outside the build box.
+        Bukkit.dispatchCommand(Bukkit.getConsoleSender(), String.format(java.util.Locale.ROOT,
+                "minecraft:summon MinecartCommandBlock %d.5 %d %d.5 {CustomName:%s}",
+                entrance[0] + 30, box[4] + 7, entrance[2], CART_NAME));
+        CommandMinecart cart = null;
+        for (CommandMinecart c : w.getEntitiesByClass(CommandMinecart.class)) {
+            if (CART_NAME.equals(c.getCustomName())) {
+                cart = c;
+            }
+        }
+        if (cart == null) {
+            getLogger().warning("Could not create the installer minecart; building from the console instead"
+                    + " (the console will show one line per build command).");
+        }
         buildTask = new BuildTask(this, w, cart, sender, from);
         buildTask.runTaskTimer(this, 1L, 1L);
         msg(sender, "Building started" + (from > 0 ? " from command " + from : "") + ": " + commands.size()
