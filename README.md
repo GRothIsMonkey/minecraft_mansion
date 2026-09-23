@@ -15,6 +15,55 @@ button after each one.
 **Full instructions, all 9 commands, the floor plans, the secrets (with spoilers) and the validation
 report are in [MANSION.md](MANSION.md).**
 
+## ⭐ Recommended: the Spigot/Bukkit 1.8.8 plugin (final Claude + Astra mansion)
+
+**[`AshgroveManor-1.0.0.jar`](AshgroveManor-1.0.0.jar)**. Upload it to your server's `plugins` folder,
+restart, and type `mansion build` and then `mansion confirm` in the console. That's it: no long commands
+(nothing over 15 characters), no command blocks and no standing spot.
+
+* It builds the **finished** mansion (Claude's base and Astra's refurbishment, final source commit
+  `4be5b07`), front entrance **-251 73 267**, facing **east**, in about 10 seconds. Then it checks
+  all 348,046 blocks against the design.
+* Tested on real Spigot 1.8.8 with Java 8 and Java 21, on flat and hilly worlds, with a crash in the
+  middle of a build, and with `enable-command-block=false`. The world it builds is **identical** to the
+  world built by the tested 34-stage console installation: every block, every chest's contents, every
+  sign and entity.
+
+**Instructions, commands, recovery and test results: [PLUGIN_INSTALL.md](PLUGIN_INSTALL.md).**
+
+The older installers below are kept and still work, but on a console that cuts lines at 256 characters
+(EaglerHost) only the plugin works.
+
+## Server-console edition (install from your hosting dashboard)
+
+The same mansion, placed at fixed world coordinates for a server you administer and installed by pasting
+lines into the **server console**. You never open a command block.
+
+* Front entrance at **-251 73 267**, facing **east** (+X). The house extends west.
+* **24 console lines** (`commands_console/console_01.txt` ... `console_24.txt`), each at most 16,000 characters,
+  pasted in order. Each build stage answers with `[Installer] Mansion Console Stage k/24 complete ...` when it is done.
+* Tested on real vanilla 1.8.9 and 1.8.0 servers, with a player standing at the documented spot.
+
+**Everything you need (the backup warning, the affected area, where to stand, the step-by-step console
+procedure, recovery, verification and the secrets in world coordinates) is in
+[CONSOLE_INSTALL.md](CONSOLE_INSTALL.md).**
+
+## Astra refurbishment (apply after the console edition)
+
+![Astra refurbishment, east entrance and south side](docs/astra_se.png)
+
+The optional Astra layer adds pale tower panels, stone-edged gables, roof cresting,
+window planting, connected garden walks, and room-specific surface details while
+preserving the base layout, inventories, secrets and east-facing placement.
+
+**Follow [ASTRA_INSTALL.md](ASTRA_INSTALL.md)** and paste the numbered files in
+[`commands_astra/`](commands_astra/) only after all 24 base stages finish. If the
+base is already built, apply the Astra files directly; do not rebuild the base.
+See [the design and validation notes](docs/ASTRA_DESIGN.md) for scope and testing.
+
+The original command-block edition below (`commands/command_01.txt` ... `command_09.txt`) is unchanged
+and still works as a fallback.
+
 ## Quick start
 
 1. Stand at the north-west corner of a flat area at least 90 × 90 blocks. The house is built toward **+X (east) and +Z (south)**.
@@ -34,11 +83,19 @@ Each file is a single line of about 32,700 characters. Open the file, click **Ra
 | Path | What it is |
 |---|---|
 | `MANSION.md` | The deliverable: Parts 1–7 (notes, installation, all commands, floor plan, secrets, validation) |
-| `commands/command_NN.txt` | The 9 paste-ready commands, one per file |
+| `commands/command_NN.txt` | The 9 paste-ready commands, one per file (command-block edition) |
+| `CONSOLE_INSTALL.md` | Server-console edition: installation guide, world coordinates, tests |
+| `commands_console/console_NN.txt` | The 22 server-console lines (plus `manifest.json` with the expected replies) |
 | `docs/` | Rendered views and floor plans |
-| `tools/` | The generator (Python 3; needs `numpy`, `scipy` and `pillow`) |
+| `tools/` | The generator (Python 3; `pip install -r requirements.txt`) |
+| `PLUGIN_INSTALL.md`, `AshgroveManor-1.0.0.jar` | The Spigot/Bukkit 1.8.8 plugin edition (current) |
+| `plugin/` | Plugin source (Java 8) and its data (`plugin/src/main/resources/ashgrove/`) |
+| `AGENTS.md` | Handoff notes for developers / AI agents: setup, commands, architecture, rules |
 
 ## Rebuilding / checking
+
+Developers and AI agents: start with [AGENTS.md](AGENTS.md). Setup is `pip install -r requirements.txt`
+and, for the real-server tests, `tools/setup_servers.sh` (downloads the vanilla 1.8.9 and 1.8.0 server jars).
 
 ```
 cd tools
@@ -46,6 +103,19 @@ python3 check.py        # voxel model: supports, fire safety, walkability (both 
 python3 export.py       # regenerates commands/, docs/ and MANSION.md
 python3 final_test.py <server-dir>   # runs commands/*.txt on a real 1.8.x server jar and diffs the world
 ```
+
+Server-console edition:
+
+```
+cd tools
+python3 console_check.py              # turned model: text replay, supports, walking, light, fire, placement
+python3 console_export.py             # regenerates commands_console/, docs/console_*.png, CONSOLE_INSTALL.md
+python3 console_test.py <server-dir> [flat|terrain]   # console workflow on a real 1.8.x server jar
+```
+
+`rotation.py` turns the design to face east at -251 73 267 (coordinates and all directional metadata),
+`console_build.py` packs it into console lines, and `mcbot.py` is the headless 1.8 player the real-server
+test uses to keep chunks loaded and to click levers, doors and chests.
 
 The design is written as Python modules:
 

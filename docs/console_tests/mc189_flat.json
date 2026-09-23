@@ -1,0 +1,487 @@
+{
+ "stages": [
+  {
+   "file": "console_01.txt",
+   "chars": 29,
+   "secs": 0.1,
+   "lines": 1,
+   "lag": [],
+   "errors": [],
+   "msg": "Block placed"
+  },
+  {
+   "file": "console_02.txt",
+   "chars": 2634,
+   "secs": 0.8,
+   "lines": 5,
+   "lag": [],
+   "errors": [],
+   "msg": "[Installer] Mansion Console Stage 2/24 complete. Next: paste console_03.txt"
+  },
+  {
+   "file": "console_03.txt",
+   "chars": 1902,
+   "secs": 4.6,
+   "lines": 5,
+   "lag": [
+    "[04:03:28] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 3871ms behind, skipping 77 tick(s)"
+   ],
+   "errors": [],
+   "msg": "[Installer] Mansion Console Stage 3/24 complete. Next: paste console_04.txt"
+  },
+  {
+   "file": "console_04.txt",
+   "chars": 2384,
+   "secs": 4.1,
+   "lines": 5,
+   "lag": [],
+   "errors": [],
+   "msg": "[Installer] Mansion Console Stage 4/24 complete. Next: paste console_05.txt"
+  },
+  {
+   "file": "console_05.txt",
+   "chars": 15869,
+   "secs": 4.0,
+   "lines": 5,
+   "lag": [],
+   "errors": [],
+   "msg": "[Installer] Mansion Console Stage 5/24 complete. Next: paste console_06.txt"
+  },
+  {
+   "file": "console_06.txt",
+   "chars": 15915,
+   "secs": 1.6,
+   "lines": 5,
+   "lag": [],
+   "errors": [],
+   "msg": "[Installer] Mansion Console Stage 6/24 complete. Next: paste console_07.txt"
+  },
+  {
+   "file": "console_07.txt",
+   "chars": 15855,
+   "secs": 1.0,
+   "lines": 5,
+   "lag": [],
+   "errors": [],
+   "msg": "[Installer] Mansion Console Stage 7/24 complete. Next: paste console_08.txt"
+  },
+  {
+   "file": "console_08.txt",
+   "chars": 15879,
+   "secs": 0.8,
+   "lines": 5,
+   "lag": [],
+   "errors": [],
+   "msg": "[Installer] Mansion Console Stage 8/24 complete. Next: paste console_09.txt"
+  },
+  {
+   "file": "console_09.txt",
+   "chars": 15848,
+   "secs": 0.9,
+   "lines": 5,
+   "lag": [],
+   "errors": [],
+   "msg": "[Installer] Mansion Console Stage 9/24 complete. Next: paste console_10.txt"
+  },
+  {
+   "file": "console_10.txt",
+   "chars": 15907,
+   "secs": 1.0,
+   "lines": 5,
+   "lag": [],
+   "errors": [],
+   "msg": "[Installer] Mansion Console Stage 10/24 complete. Next: paste console_11.txt"
+  },
+  {
+   "file": "console_11.txt",
+   "chars": 15861,
+   "secs": 0.9,
+   "lines": 5,
+   "lag": [],
+   "errors": [],
+   "msg": "[Installer] Mansion Console Stage 11/24 complete. Next: paste console_12.txt"
+  },
+  {
+   "file": "console_12.txt",
+   "chars": 15768,
+   "secs": 0.9,
+   "lines": 5,
+   "lag": [],
+   "errors": [],
+   "msg": "[Installer] Mansion Console Stage 12/24 complete. Next: paste console_13.txt"
+  },
+  {
+   "file": "console_13.txt",
+   "chars": 15719,
+   "secs": 0.8,
+   "lines": 5,
+   "lag": [],
+   "errors": [],
+   "msg": "[Installer] Mansion Console Stage 13/24 complete. Next: paste console_14.txt"
+  },
+  {
+   "file": "console_14.txt",
+   "chars": 15919,
+   "secs": 0.9,
+   "lines": 5,
+   "lag": [],
+   "errors": [],
+   "msg": "[Installer] Mansion Console Stage 14/24 complete. Next: paste console_15.txt"
+  },
+  {
+   "file": "console_15.txt",
+   "chars": 15872,
+   "secs": 0.8,
+   "lines": 5,
+   "lag": [],
+   "errors": [],
+   "msg": "[Installer] Mansion Console Stage 15/24 complete. Next: paste console_16.txt"
+  },
+  {
+   "file": "console_16.txt",
+   "chars": 15873,
+   "secs": 0.9,
+   "lines": 5,
+   "lag": [],
+   "errors": [],
+   "msg": "[Installer] Mansion Console Stage 16/24 complete. Next: paste console_17.txt"
+  },
+  {
+   "file": "console_17.txt",
+   "chars": 15882,
+   "secs": 0.9,
+   "lines": 5,
+   "lag": [],
+   "errors": [],
+   "msg": "[Installer] Mansion Console Stage 17/24 complete. Next: paste console_18.txt"
+  },
+  {
+   "file": "console_18.txt",
+   "chars": 15868,
+   "secs": 0.8,
+   "lines": 5,
+   "lag": [],
+   "errors": [],
+   "msg": "[Installer] Mansion Console Stage 18/24 complete. Next: paste console_19.txt"
+  },
+  {
+   "file": "console_19.txt",
+   "chars": 15835,
+   "secs": 0.8,
+   "lines": 5,
+   "lag": [],
+   "errors": [],
+   "msg": "[Installer] Mansion Console Stage 19/24 complete. Next: paste console_20.txt"
+  },
+  {
+   "file": "console_20.txt",
+   "chars": 15886,
+   "secs": 0.8,
+   "lines": 5,
+   "lag": [],
+   "errors": [],
+   "msg": "[Installer] Mansion Console Stage 20/24 complete. Next: paste console_21.txt"
+  },
+  {
+   "file": "console_21.txt",
+   "chars": 15899,
+   "secs": 0.8,
+   "lines": 5,
+   "lag": [],
+   "errors": [],
+   "msg": "[Installer] Mansion Console Stage 21/24 complete. Next: paste console_22.txt"
+  },
+  {
+   "file": "console_22.txt",
+   "chars": 15867,
+   "secs": 0.8,
+   "lines": 5,
+   "lag": [],
+   "errors": [],
+   "msg": "[Installer] Mansion Console Stage 22/24 complete. Next: paste console_23.txt"
+  },
+  {
+   "file": "console_23.txt",
+   "chars": 15866,
+   "secs": 0.9,
+   "lines": 5,
+   "lag": [],
+   "errors": [],
+   "msg": "[Installer] Mansion Console Stage 23/24 complete. Next: paste console_24.txt"
+  },
+  {
+   "file": "console_24.txt",
+   "chars": 7459,
+   "secs": 0.8,
+   "lines": 5,
+   "lag": [],
+   "errors": [],
+   "msg": "[Installer] Mansion Console Stage 24/24 complete. Mansion construction complete."
+  }
+ ],
+ "verify": {
+  "testforblock -221 124 267 air": [
+   "Successfully found the block at -221,124,267."
+  ],
+  "testfor @e[type=MinecartCommandBlock]": [],
+  "testfor @e[type=FallingSand]": [],
+  "testforblock -251 76 266 dark_oak_door": [
+   "Successfully found the block at -251,76,266."
+  ],
+  "testforblock -251 76 267 dark_oak_door": [
+   "Successfully found the block at -251,76,267."
+  ]
+ },
+ "extra": {
+  "verify": {
+   "testforblock -221 124 267 air": [
+    "Successfully found the block at -221,124,267."
+   ],
+   "testfor @e[type=MinecartCommandBlock]": [],
+   "testfor @e[type=FallingSand]": [],
+   "testforblock -251 76 266 dark_oak_door": [
+    "Successfully found the block at -251,76,266."
+   ],
+   "testforblock -251 76 267 dark_oak_door": [
+    "Successfully found the block at -251,76,267."
+   ]
+  },
+  "repeated": "console_23.txt",
+  "cleanup": {
+   "kill @e[type=MinecartCommandBlock,x=-224,y=122,z=264,dx=6,dy=100,dz=6]": [],
+   "kill @e[type=FallingSand,x=-224,y=122,z=264,dx=6,dy=100,dz=6]": [],
+   "fill -222 124 266 -218 128 268 air": [
+    "1 blocks filled"
+   ],
+   "gamerule commandBlockOutput true": [
+    "Game rule has been updated"
+   ],
+   "gamerule logAdminCommands true": [
+    "Game rule has been updated"
+   ],
+   "kill @e[type=Item,x=-309,y=62,z=226,dx=82,dy=56,dz=82]": []
+  }
+ },
+ "results": [
+  [
+   "gamerules restored afterwards",
+   true,
+   "['commandBlockOutput = true', 'logAdminCommands = true']"
+  ],
+  [
+   "the test player stayed connected at the stand point for the whole install",
+   true,
+   "view-distance 6"
+  ],
+  [
+   "no server errors, exceptions or watchdog",
+   true,
+   ""
+  ],
+  [
+   "recovery drill: pad re-placed, console_23.txt pasted a second time, documented cleanup run",
+   true,
+   "{'kill @e[type=MinecartCommandBlock,x=-224,y=122,z=264,dx=6,dy=100,dz=6]': [], 'kill @e[type=FallingSand,x=-224,y=122,z=264,dx=6,dy=100,dz=6]': [], 'fill -222 124 266 -218 128 268 air': ['1 blocks filled'], 'gamerule commandBlockOutput true': ['Game rule has been updated'], 'gamerule logAdminCommands true': ['Game rule has been updated'], 'kill @e[type=Item,x=-309,y=62,z=226,dx=82,dy=56,dz=82]': []}"
+  ],
+  [
+   "documented checks answer as expected",
+   true,
+   "{'testforblock -221 124 267 air': ['Successfully found the block at -221,124,267.'], 'testfor @e[type=MinecartCommandBlock]': [], 'testfor @e[type=FallingSand]': [], 'testforblock -251 76 266 dark_oak_door': ['Successfully found the block at -251,76,266.'], 'testforblock -251 76 267 dark_oak_door': ['Successfully found the block at -251,76,267.']}"
+  ],
+  [
+   "every console line answered with its documented completion message",
+   true,
+   ""
+  ],
+  [
+   "no stage lagged a tick past the 60 s watchdog",
+   true,
+   "[('console_03.txt', [\"[04:03:28] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 3871ms behind, skipping 77 tick(s)\"])]"
+  ],
+  [
+   "console stays readable: at most 5 installer lines per stage",
+   true,
+   "[1, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]"
+  ],
+  [
+   "no command errors reported in the console",
+   true,
+   "[]"
+  ],
+  [
+   "every block in the 113x97x113 test box matches the design",
+   true,
+   "0 mismatches [] (+132 hidden grass blocks under walls turned to dirt by the game)"
+  ],
+  [
+   "installer pad and column removed (air from Y 123 to 131)",
+   true,
+   "[]"
+  ],
+  [
+   "no command block left except the laboratory prop",
+   true,
+   "[(-263, 69, 271)]"
+  ],
+  [
+   "no stray redstone blocks",
+   true,
+   "0"
+  ],
+  [
+   "no minecarts, falling blocks or dropped items left",
+   true,
+   "{'ArmorStand': 8, 'Painting': 16, 'ItemFrame': 1}"
+  ],
+  [
+   "all 16 paintings hang where designed, facing the rotated way",
+   true,
+   "missing [] extra []"
+  ],
+  [
+   "item frame in place and facing correctly",
+   true,
+   "[((-269, 93, 278), 'minecraft:clock', 2)] vs [((-269, 93, 278), 'minecraft:clock', 2)]"
+  ],
+  [
+   "all 8 armor stands in place with rotated yaw",
+   true,
+   "[((-284.5, 76.0, 254.5), 270.0), ((-284.5, 76.0, 257.5), 270.0), ((-272.5, 91.0, 266.5), 90.0)]"
+  ],
+  [
+   "unsupported attachments in the real world",
+   true,
+   "[]"
+  ],
+  [
+   "fire hazards in the real world",
+   true,
+   ""
+  ],
+  [
+   "real world: every room probe reachable on foot from the lawn and back",
+   true,
+   "19251 standing states, 0 one-way, unreachable []"
+  ],
+  [
+   "real world: no dark spawnable interior spots",
+   true,
+   "0"
+  ],
+  [
+   "library bookcase door: lever off drops the bookcase, lever on restores it",
+   true,
+   ""
+  ],
+  [
+   "wine-cellar barrel: tap lever sinks the barrel and brings it back",
+   true,
+   ""
+  ],
+  [
+   "vault iron door opens and shuts from the levers on both sides",
+   true,
+   ""
+  ],
+  [
+   "laboratory lamp panel lit, switches off and on with its lever",
+   true,
+   ""
+  ],
+  [
+   "laboratory pressure plate runs its command block (player gets the \"whirs\" message)",
+   true,
+   ""
+  ],
+  [
+   "laboratory hatch in the stair cubby opens",
+   true,
+   ""
+  ],
+  [
+   "escape-tunnel hatch in the vault floor opens",
+   true,
+   ""
+  ],
+  [
+   "wardrobe door to the roof room opens",
+   true,
+   ""
+  ],
+  [
+   "anvil: 3/3 work",
+   true,
+   "[]"
+  ],
+  [
+   "beacon: 1/1 work",
+   true,
+   "[]"
+  ],
+  [
+   "bed (sleep attempt answered, both halves intact): 20/20 work",
+   true,
+   "[]"
+  ],
+  [
+   "brewing_stand: 35/35 work",
+   true,
+   "[]"
+  ],
+  [
+   "chest: 49/49 work",
+   true,
+   "[]"
+  ],
+  [
+   "crafting_table: 22/22 work",
+   true,
+   "[]"
+  ],
+  [
+   "dispenser: 4/4 work",
+   true,
+   "[]"
+  ],
+  [
+   "dropper: 1/1 work",
+   true,
+   "[]"
+  ],
+  [
+   "enchanting_table: 3/3 work",
+   true,
+   "[]"
+  ],
+  [
+   "ender_chest: 1/1 work",
+   true,
+   "[]"
+  ],
+  [
+   "fence_gate (opens and closes): 1/1 work",
+   true,
+   "[]"
+  ],
+  [
+   "furnace: 23/23 work",
+   true,
+   "[]"
+  ],
+  [
+   "trapdoor (opens and closes): 338/338 work",
+   true,
+   "[]"
+  ],
+  [
+   "wooden door (opens and closes): 102/102 work",
+   true,
+   "[]"
+  ],
+  [
+   "test player stayed connected",
+   true,
+   "None"
+  ]
+ ]
+}

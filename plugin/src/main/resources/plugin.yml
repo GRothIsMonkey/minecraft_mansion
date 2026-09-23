@@ -1,0 +1,16 @@
+name: AshgroveManor
+main: com.ashgrove.manor.AshgroveManorPlugin
+version: '1.0.0'
+description: Builds the finished Ashgrove Manor (Claude + Astra, source 4be5b07) at -251 73 267, facing east.
+author: Claude Code
+commands:
+  mansion:
+    description: Build, pause, resume or verify Ashgrove Manor.
+    usage: /mansion [build|confirm|status|pause|resume|verify]
+    aliases: [ashgrove]
+    permission: ashgrove.admin
+    permission-message: You need to be an operator to use /mansion.
+permissions:
+  ashgrove.admin:
+    description: Use /mansion.
+    default: op

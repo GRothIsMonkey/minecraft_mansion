@@ -1,0 +1,8 @@
+# Ashgrove Manor plugin settings.
+#
+# The mansion is always built in the server's main world (level-name in server.properties).
+#
+# How many milliseconds of building to do per server tick (50 ms = one tick).
+# Lower = smoother for players online, slower build. A few single commands (the big
+# wall shells) take 1-4 seconds on their own no matter what this is set to.
+tick-budget-ms: 30

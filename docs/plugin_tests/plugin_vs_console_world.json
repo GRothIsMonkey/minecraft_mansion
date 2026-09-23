@@ -1,0 +1,42 @@
+{
+ "area": [
+  -329,
+  49,
+  216,
+  -217,
+  145,
+  328
+ ],
+ "blocks_compared": 1238593,
+ "block_differences": 0,
+ "block_examples": [],
+ "harmless": {
+  "water_level_cells": 0,
+  "grass_dirt_cells": 134
+ },
+ "tile_entities": 227,
+ "tile_entity_kinds": {
+  "Sign": 8,
+  "Furnace": 23,
+  "Chest": 49,
+  "Cauldron": 35,
+  "FlowerPot": 64,
+  "RecordPlayer": 3,
+  "Skull": 20,
+  "EnderChest": 1,
+  "Music": 7,
+  "Banner": 6,
+  "EnchantTable": 3,
+  "Beacon": 1,
+  "Trap": 4,
+  "Comparator": 1,
+  "Dropper": 1,
+  "Control": 1
+ },
+ "tile_entity_differences": 0,
+ "tile_entity_examples": [],
+ "entities": 25,
+ "entity_differences": 0,
+ "entity_examples": [],
+ "identical": true
+}

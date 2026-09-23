@@ -59,7 +59,7 @@ class Server:
         with open(os.path.join(self.dir, 'server.properties'), 'w') as fh:
             fh.write(PROPS + self.props_extra)
         self.p = subprocess.Popen(
-            ['java', '-Xmx' + self.xmx, '-Xss4M', '-jar', 'server.jar', 'nogui'],
+            [os.environ.get('MC_JAVA', 'java'), '-Xmx' + self.xmx, '-Xss4M', '-jar', 'server.jar', 'nogui'],
             cwd=self.dir, stdin=subprocess.PIPE, stdout=subprocess.PIPE,
             stderr=subprocess.STDOUT, text=True, bufsize=1)
         self.t = threading.Thread(target=self._reader, daemon=True)
