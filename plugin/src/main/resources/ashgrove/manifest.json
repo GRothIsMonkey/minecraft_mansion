@@ -1,0 +1,261 @@
+{
+ "name": "Ashgrove Manor (final Claude + Astra, source 4be5b07)",
+ "source_commit": "4be5b07f0e33010fcd4dee65cd13ffa6b6fb0320",
+ "commands": 4518,
+ "base_commands": 3356,
+ "astra_commands": 1162,
+ "commands_sha256": "f2473ae5afa0e2ef0460c6ab6815d79767960b17017dbf1b54df8c0a95bcd252",
+ "shipped_files_verified": 34,
+ "entrance": [
+  -251,
+  73,
+  267
+ ],
+ "build_box": [
+  -309,
+  62,
+  226,
+  -227,
+  118,
+  308
+ ],
+ "written_cells": 348046,
+ "expected_sha256": "d15a6227a6aecd151fe90e7f5eed316183cdf11e345c1e09392867f94eac7842",
+ "base_item_sweep": "kill @e[type=Item,x=-309,y=62,z=226,dx=82,dy=56,dz=82]",
+ "entities": [
+  {
+   "type": "ArmorStand",
+   "pos": [
+    -284.5,
+    76,
+    254.5
+   ]
+  },
+  {
+   "type": "ArmorStand",
+   "pos": [
+    -284.5,
+    76,
+    257.5
+   ]
+  },
+  {
+   "type": "Painting",
+   "block": [
+    -269,
+    81,
+    267
+   ],
+   "motive": "Fighters",
+   "facing": 3
+  },
+  {
+   "type": "Painting",
+   "block": [
+    -264,
+    76,
+    262
+   ],
+   "motive": "Wanderer",
+   "facing": 2
+  },
+  {
+   "type": "ArmorStand",
+   "pos": [
+    -278.5,
+    84,
+    275.5
+   ]
+  },
+  {
+   "type": "ArmorStand",
+   "pos": [
+    -280.5,
+    84,
+    275.5
+   ]
+  },
+  {
+   "type": "ArmorStand",
+   "pos": [
+    -272.5,
+    91,
+    266.5
+   ]
+  },
+  {
+   "type": "ArmorStand",
+   "pos": [
+    -284.5,
+    91,
+    262.5
+   ]
+  },
+  {
+   "type": "ArmorStand",
+   "pos": [
+    -284.5,
+    91,
+    270.5
+   ]
+  },
+  {
+   "type": "ArmorStand",
+   "pos": [
+    -281.5,
+    97,
+    263.5
+   ]
+  },
+  {
+   "type": "Painting",
+   "block": [
+    -279,
+    98,
+    260
+   ],
+   "motive": "Sunset",
+   "facing": 0
+  },
+  {
+   "type": "Painting",
+   "block": [
+    -278,
+    98,
+    273
+   ],
+   "motive": "Pool",
+   "facing": 2
+  },
+  {
+   "type": "Painting",
+   "block": [
+    -275,
+    70,
+    295
+   ],
+   "motive": "Plant",
+   "facing": 2
+  },
+  {
+   "type": "Painting",
+   "block": [
+    -271,
+    78,
+    266
+   ],
+   "motive": "Stage",
+   "facing": 1
+  },
+  {
+   "type": "Painting",
+   "block": [
+    -284,
+    77,
+    244
+   ],
+   "motive": "Kebab",
+   "facing": 3
+  },
+  {
+   "type": "Painting",
+   "block": [
+    -263,
+    85,
+    252
+   ],
+   "motive": "Sea",
+   "facing": 2
+  },
+  {
+   "type": "Painting",
+   "block": [
+    -263,
+    85,
+    281
+   ],
+   "motive": "Courbet",
+   "facing": 0
+  },
+  {
+   "type": "Painting",
+   "block": [
+    -259,
+    92,
+    260
+   ],
+   "motive": "Bust",
+   "facing": 3
+  },
+  {
+   "type": "Painting",
+   "block": [
+    -259,
+    92,
+    265
+   ],
+   "motive": "SkullAndRoses",
+   "facing": 3
+  },
+  {
+   "type": "Painting",
+   "block": [
+    -259,
+    92,
+    269
+   ],
+   "motive": "Void",
+   "facing": 3
+  },
+  {
+   "type": "Painting",
+   "block": [
+    -259,
+    92,
+    274
+   ],
+   "motive": "Wither",
+   "facing": 3
+  },
+  {
+   "type": "Painting",
+   "block": [
+    -256,
+    92,
+    254
+   ],
+   "motive": "Graham",
+   "facing": 0
+  },
+  {
+   "type": "Painting",
+   "block": [
+    -256,
+    92,
+    279
+   ],
+   "motive": "Wanderer",
+   "facing": 2
+  },
+  {
+   "type": "Painting",
+   "block": [
+    -252,
+    98,
+    248
+   ],
+   "motive": "Graham",
+   "facing": 1
+  },
+  {
+   "type": "ItemFrame",
+   "block": [
+    -269,
+    93,
+    278
+   ],
+   "item": "clock",
+   "facing": 2
+  }
+ ]
+}
