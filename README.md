@@ -21,13 +21,26 @@ The same mansion, placed at fixed world coordinates for a server you administer 
 lines into the **server console**. You never open a command block.
 
 * Front entrance at **-251 73 267**, facing **east** (+X). The house extends west.
-* **22 console lines** (`commands_console/console_01.txt` ... `console_22.txt`), each at most 16,000 characters,
-  pasted in order. Each one answers with `[Installer] Mansion Console Stage k/22 complete ...` when it is done.
+* **24 console lines** (`commands_console/console_01.txt` ... `console_24.txt`), each at most 16,000 characters,
+  pasted in order. Each build stage answers with `[Installer] Mansion Console Stage k/24 complete ...` when it is done.
 * Tested on real vanilla 1.8.9 and 1.8.0 servers, with a player standing at the documented spot.
 
 **Everything you need (the backup warning, the affected area, where to stand, the step-by-step console
 procedure, recovery, verification and the secrets in world coordinates) is in
 [CONSOLE_INSTALL.md](CONSOLE_INSTALL.md).**
+
+## Astra refurbishment (apply after the console edition)
+
+![Astra refurbishment, east entrance and south side](docs/astra_se.png)
+
+The optional Astra layer adds pale tower panels, stone-edged gables, roof cresting,
+window planting, connected garden walks, and room-specific surface details while
+preserving the base layout, inventories, secrets and east-facing placement.
+
+**Follow [ASTRA_INSTALL.md](ASTRA_INSTALL.md)** and paste the numbered files in
+[`commands_astra/`](commands_astra/) only after all 24 base stages finish. If the
+base is already built, apply the Astra files directly; do not rebuild the base.
+See [the design and validation notes](docs/ASTRA_DESIGN.md) for scope and testing.
 
 The original command-block edition below (`commands/command_01.txt` ... `command_09.txt`) is unchanged
 and still works as a fallback.

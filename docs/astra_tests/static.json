@@ -1,0 +1,176 @@
+{
+ "kind": "static",
+ "patch_sha256": "1c6b3b463ae92c38cefd68bb9150da63d1633f8e571c3f8158dda84951bd29c2",
+ "results": [
+  [
+   "replayed absolute commands == rotated model",
+   true,
+   ""
+  ],
+  [
+   "no relative \"~\" coordinates in build commands",
+   true,
+   ""
+  ],
+  [
+   "every block write and entity lies inside the documented build box",
+   true,
+   ""
+  ],
+  [
+   "front doors at X=-251, Z 266-267, door feet Y=76",
+   true,
+   ""
+  ],
+  [
+   "front door leaves face east/west (walk in = -X, walk out = +X)",
+   true,
+   ""
+  ],
+  [
+   "mansion mirror axis on Z = 267.0 (entrance centre)",
+   true,
+   ""
+  ],
+  [
+   "lawn grass at Y=72 (stand on it at feet Y=73); floor of the house at Y=75",
+   true,
+   ""
+  ],
+  [
+   "bulk of the mansion lies west of the entrance (X < -251)",
+   true,
+   ""
+  ],
+  [
+   "fountain, courtyard and drive are east of the facade",
+   true,
+   ""
+  ],
+  [
+   "rear garden (steps, well, gazebo) is west of the house",
+   true,
+   ""
+  ],
+  [
+   "pad + installer column are outside every block the build writes",
+   true,
+   ""
+  ],
+  [
+   "installer is above the tallest part of the build and above normal tree height",
+   true,
+   ""
+  ],
+  [
+   "player stand point is outside the build box",
+   true,
+   ""
+  ],
+  [
+   "installer within 16 blocks (horizontal) of the stand point (Spigot entity activation)",
+   true,
+   ""
+  ],
+  [
+   "view-distance needed at the stand point <= documented minimum",
+   true,
+   ""
+  ],
+  [
+   "every directional metadata rotates like its direction (156 cases)",
+   true,
+   ""
+  ],
+  [
+   "four quarter turns give back the original metadata",
+   true,
+   ""
+  ],
+  [
+   "unsupported attachments (torches, ladders, signs, levers, buttons, trapdoors, doors, beds...)",
+   true,
+   ""
+  ],
+  [
+   "fire hazards",
+   true,
+   ""
+  ],
+  [
+   "walkability: no one-way traps",
+   true,
+   ""
+  ],
+  [
+   "all 87 room probes reachable from the front lawn and back again",
+   true,
+   ""
+  ],
+  [
+   "dark spawnable interior spots",
+   true,
+   ""
+  ],
+  [
+   "every console line <= 16000 characters, printable ASCII, no leading \"/\"",
+   true,
+   ""
+  ],
+  [
+   "the stages carry every build command exactly once, in order",
+   true,
+   ""
+  ],
+  [
+   "all original tile-entity NBT and hanging entities preserved",
+   true,
+   ""
+  ],
+  [
+   "all original utility and mechanism blocks retain ID and metadata",
+   true,
+   ""
+  ],
+  [
+   "no new solid blocks in the interior circulation volume",
+   true,
+   ""
+  ],
+  [
+   "all 24 base console files retain their manifest hashes and regenerate byte-for-byte",
+   true,
+   ""
+  ],
+  [
+   "patch uses only filtered 1.8 fills, never inventory or entity resets",
+   true,
+   ""
+  ],
+  [
+   "shipped Astra stages equal regeneration using measured costs",
+   true,
+   ""
+  ],
+  [
+   "Astra manifest hashes match every shipped file",
+   true,
+   ""
+  ],
+  [
+   "every Astra stage is printable ASCII, no slash, within character and measured work budgets",
+   true,
+   ""
+  ],
+  [
+   "Astra stages carry exactly the add-on commands in order",
+   true,
+   ""
+  ],
+  [
+   "patch replay is idempotent",
+   true,
+   ""
+  ]
+ ]
+}

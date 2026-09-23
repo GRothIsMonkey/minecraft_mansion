@@ -1,0 +1,441 @@
+{
+ "server_version": "1.8",
+ "server_jar_sha1": "a028f00e678ee5c6aef0e29656dca091b5df11c7",
+ "kind": "flat",
+ "base_commit": "082e475081c6f5137e908f38d4b526e572148454",
+ "patch_sha256": "1c6b3b463ae92c38cefd68bb9150da63d1633f8e571c3f8158dda84951bd29c2",
+ "base_stages": [
+  {
+   "file": "console_01.txt",
+   "chars": 29,
+   "secs": 0.1,
+   "lines": 1,
+   "lag": [],
+   "errors": [],
+   "msg": "Block placed"
+  },
+  {
+   "file": "console_02.txt",
+   "chars": 2634,
+   "secs": 0.9,
+   "lines": 5,
+   "lag": [],
+   "errors": [],
+   "msg": "[Installer] Mansion Console Stage 2/24 complete. Next: paste console_03.txt"
+  },
+  {
+   "file": "console_03.txt",
+   "chars": 1902,
+   "secs": 2.8,
+   "lines": 5,
+   "lag": [
+    "[00:31:56] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 2117ms behind, skipping 42 tick(s)"
+   ],
+   "errors": [],
+   "msg": "[Installer] Mansion Console Stage 3/24 complete. Next: paste console_04.txt"
+  },
+  {
+   "file": "console_04.txt",
+   "chars": 2384,
+   "secs": 2.4,
+   "lines": 5,
+   "lag": [],
+   "errors": [],
+   "msg": "[Installer] Mansion Console Stage 4/24 complete. Next: paste console_05.txt"
+  },
+  {
+   "file": "console_05.txt",
+   "chars": 15869,
+   "secs": 2.5,
+   "lines": 5,
+   "lag": [],
+   "errors": [],
+   "msg": "[Installer] Mansion Console Stage 5/24 complete. Next: paste console_06.txt"
+  },
+  {
+   "file": "console_06.txt",
+   "chars": 15915,
+   "secs": 1.2,
+   "lines": 5,
+   "lag": [],
+   "errors": [],
+   "msg": "[Installer] Mansion Console Stage 6/24 complete. Next: paste console_07.txt"
+  },
+  {
+   "file": "console_07.txt",
+   "chars": 15855,
+   "secs": 0.9,
+   "lines": 5,
+   "lag": [],
+   "errors": [],
+   "msg": "[Installer] Mansion Console Stage 7/24 complete. Next: paste console_08.txt"
+  },
+  {
+   "file": "console_08.txt",
+   "chars": 15879,
+   "secs": 0.8,
+   "lines": 5,
+   "lag": [],
+   "errors": [],
+   "msg": "[Installer] Mansion Console Stage 8/24 complete. Next: paste console_09.txt"
+  },
+  {
+   "file": "console_09.txt",
+   "chars": 15848,
+   "secs": 0.8,
+   "lines": 5,
+   "lag": [],
+   "errors": [],
+   "msg": "[Installer] Mansion Console Stage 9/24 complete. Next: paste console_10.txt"
+  },
+  {
+   "file": "console_10.txt",
+   "chars": 15907,
+   "secs": 0.9,
+   "lines": 5,
+   "lag": [],
+   "errors": [],
+   "msg": "[Installer] Mansion Console Stage 10/24 complete. Next: paste console_11.txt"
+  },
+  {
+   "file": "console_11.txt",
+   "chars": 15861,
+   "secs": 0.9,
+   "lines": 5,
+   "lag": [],
+   "errors": [],
+   "msg": "[Installer] Mansion Console Stage 11/24 complete. Next: paste console_12.txt"
+  },
+  {
+   "file": "console_12.txt",
+   "chars": 15768,
+   "secs": 0.9,
+   "lines": 5,
+   "lag": [],
+   "errors": [],
+   "msg": "[Installer] Mansion Console Stage 12/24 complete. Next: paste console_13.txt"
+  },
+  {
+   "file": "console_13.txt",
+   "chars": 15719,
+   "secs": 0.8,
+   "lines": 5,
+   "lag": [],
+   "errors": [],
+   "msg": "[Installer] Mansion Console Stage 13/24 complete. Next: paste console_14.txt"
+  },
+  {
+   "file": "console_14.txt",
+   "chars": 15919,
+   "secs": 0.8,
+   "lines": 5,
+   "lag": [],
+   "errors": [],
+   "msg": "[Installer] Mansion Console Stage 14/24 complete. Next: paste console_15.txt"
+  },
+  {
+   "file": "console_15.txt",
+   "chars": 15872,
+   "secs": 0.8,
+   "lines": 5,
+   "lag": [],
+   "errors": [],
+   "msg": "[Installer] Mansion Console Stage 15/24 complete. Next: paste console_16.txt"
+  },
+  {
+   "file": "console_16.txt",
+   "chars": 15873,
+   "secs": 0.8,
+   "lines": 5,
+   "lag": [],
+   "errors": [],
+   "msg": "[Installer] Mansion Console Stage 16/24 complete. Next: paste console_17.txt"
+  },
+  {
+   "file": "console_17.txt",
+   "chars": 15882,
+   "secs": 0.8,
+   "lines": 5,
+   "lag": [],
+   "errors": [],
+   "msg": "[Installer] Mansion Console Stage 17/24 complete. Next: paste console_18.txt"
+  },
+  {
+   "file": "console_18.txt",
+   "chars": 15868,
+   "secs": 0.8,
+   "lines": 5,
+   "lag": [],
+   "errors": [],
+   "msg": "[Installer] Mansion Console Stage 18/24 complete. Next: paste console_19.txt"
+  },
+  {
+   "file": "console_19.txt",
+   "chars": 15835,
+   "secs": 0.8,
+   "lines": 5,
+   "lag": [],
+   "errors": [],
+   "msg": "[Installer] Mansion Console Stage 19/24 complete. Next: paste console_20.txt"
+  },
+  {
+   "file": "console_20.txt",
+   "chars": 15886,
+   "secs": 0.8,
+   "lines": 5,
+   "lag": [],
+   "errors": [],
+   "msg": "[Installer] Mansion Console Stage 20/24 complete. Next: paste console_21.txt"
+  },
+  {
+   "file": "console_21.txt",
+   "chars": 15899,
+   "secs": 0.8,
+   "lines": 5,
+   "lag": [],
+   "errors": [],
+   "msg": "[Installer] Mansion Console Stage 21/24 complete. Next: paste console_22.txt"
+  },
+  {
+   "file": "console_22.txt",
+   "chars": 15867,
+   "secs": 0.8,
+   "lines": 5,
+   "lag": [],
+   "errors": [],
+   "msg": "[Installer] Mansion Console Stage 22/24 complete. Next: paste console_23.txt"
+  },
+  {
+   "file": "console_23.txt",
+   "chars": 15866,
+   "secs": 0.8,
+   "lines": 5,
+   "lag": [],
+   "errors": [],
+   "msg": "[Installer] Mansion Console Stage 23/24 complete. Next: paste console_24.txt"
+  },
+  {
+   "file": "console_24.txt",
+   "chars": 7459,
+   "secs": 0.8,
+   "lines": 5,
+   "lag": [],
+   "errors": [],
+   "msg": "[Installer] Mansion Console Stage 24/24 complete. Mansion construction complete."
+  },
+  {
+   "verify": {
+    "testforblock -221 124 267 air": [
+     "Successfully found the block at -221,124,267."
+    ],
+    "testfor @e[type=MinecartCommandBlock]": [],
+    "testfor @e[type=FallingSand]": [],
+    "testforblock -251 76 266 dark_oak_door": [
+     "Successfully found the block at -251,76,266."
+    ],
+    "testforblock -251 76 267 dark_oak_door": [
+     "Successfully found the block at -251,76,267."
+    ]
+   },
+   "repeated": "console_23.txt",
+   "cleanup": {
+    "kill @e[type=MinecartCommandBlock,x=-224,y=122,z=264,dx=6,dy=100,dz=6]": [],
+    "kill @e[type=FallingSand,x=-224,y=122,z=264,dx=6,dy=100,dz=6]": [],
+    "fill -222 124 266 -218 128 268 air": [
+     "1 blocks filled"
+    ],
+    "gamerule commandBlockOutput true": [
+     "Game rule has been updated"
+    ],
+    "gamerule logAdminCommands true": [
+     "Game rule has been updated"
+    ],
+    "kill @e[type=Item,x=-309,y=62,z=226,dx=82,dy=56,dz=82]": []
+   }
+  }
+ ],
+ "astra_stages": [
+  {
+   "file": "astra_01.txt",
+   "secs": 1.101,
+   "chars": 29,
+   "errors": [],
+   "message": "[00:33:04] [Server thread/INFO]: Block placed"
+  },
+  {
+   "file": "astra_02.txt",
+   "secs": 1.868,
+   "chars": 14828,
+   "errors": [],
+   "message": "[00:33:06] [Server thread/INFO]: [Astra] Astra Stage 2/10 complete. Next: paste astra_03.txt"
+  },
+  {
+   "file": "astra_03.txt",
+   "secs": 1.853,
+   "chars": 14886,
+   "errors": [],
+   "message": "[00:33:08] [Server thread/INFO]: [Astra] Astra Stage 3/10 complete. Next: paste astra_04.txt"
+  },
+  {
+   "file": "astra_04.txt",
+   "secs": 1.855,
+   "chars": 14813,
+   "errors": [],
+   "message": "[00:33:09] [Server thread/INFO]: [Astra] Astra Stage 4/10 complete. Next: paste astra_05.txt"
+  },
+  {
+   "file": "astra_05.txt",
+   "secs": 1.856,
+   "chars": 14835,
+   "errors": [],
+   "message": "[00:33:11] [Server thread/INFO]: [Astra] Astra Stage 5/10 complete. Next: paste astra_06.txt"
+  },
+  {
+   "file": "astra_06.txt",
+   "secs": 1.853,
+   "chars": 14888,
+   "errors": [],
+   "message": "[00:33:13] [Server thread/INFO]: [Astra] Astra Stage 6/10 complete. Next: paste astra_07.txt"
+  },
+  {
+   "file": "astra_07.txt",
+   "secs": 1.803,
+   "chars": 14904,
+   "errors": [],
+   "message": "[00:33:15] [Server thread/INFO]: [Astra] Astra Stage 7/10 complete. Next: paste astra_08.txt"
+  },
+  {
+   "file": "astra_08.txt",
+   "secs": 1.804,
+   "chars": 14897,
+   "errors": [],
+   "message": "[00:33:17] [Server thread/INFO]: [Astra] Astra Stage 8/10 complete. Next: paste astra_09.txt"
+  },
+  {
+   "file": "astra_09.txt",
+   "secs": 1.803,
+   "chars": 14818,
+   "errors": [],
+   "message": "[00:33:18] [Server thread/INFO]: [Astra] Astra Stage 9/10 complete. Next: paste astra_10.txt"
+  },
+  {
+   "file": "astra_10.txt",
+   "secs": 1.803,
+   "chars": 14344,
+   "errors": [],
+   "message": "[00:33:20] [Server thread/INFO]: [Astra] Astra Stage 10/10 complete. Astra refurbishment complete."
+  }
+ ],
+ "results": [
+  [
+   "gamerules restored afterwards",
+   true,
+   "['commandBlockOutput = true', 'logAdminCommands = true']"
+  ],
+  [
+   "the test player stayed connected at the stand point for the whole install",
+   true,
+   "view-distance 6"
+  ],
+  [
+   "no server errors, exceptions or watchdog",
+   true,
+   ""
+  ],
+  [
+   "all 24 frozen base stages completed",
+   true,
+   ""
+  ],
+  [
+   "all shipped Astra stages completed without console errors",
+   true,
+   ""
+  ],
+  [
+   "recovery drill repeated an Astra stage and ran scoped cleanup",
+   true,
+   ""
+  ],
+  [
+   "Astra completion and recovery restore documented gamerules",
+   true,
+   "['commandBlockOutput = true', 'logAdminCommands = true']"
+  ],
+  [
+   "test player remained connected throughout the patch",
+   true,
+   "None"
+  ],
+  [
+   "no server exceptions or watchdog during Astra pass",
+   true,
+   "[]"
+  ],
+  [
+   "all saved inventory contents match the pre-patch world",
+   true,
+   "112 inventory tile entities"
+  ],
+  [
+   "every block in the 113x97x113 test box matches the design",
+   true,
+   "0 mismatches [] (+252 hidden grass blocks under walls turned to dirt by the game)"
+  ],
+  [
+   "installer pad and column removed (air from Y 123 to 131)",
+   true,
+   "[]"
+  ],
+  [
+   "no command block left except the laboratory prop",
+   true,
+   "[(-263, 69, 271)]"
+  ],
+  [
+   "no stray redstone blocks",
+   true,
+   "0"
+  ],
+  [
+   "no minecarts, falling blocks or dropped items left",
+   true,
+   "{'ArmorStand': 8, 'Painting': 16, 'ItemFrame': 1}"
+  ],
+  [
+   "all 16 paintings hang where designed, facing the rotated way",
+   true,
+   "missing [] extra []"
+  ],
+  [
+   "item frame in place and facing correctly",
+   true,
+   "[((-269, 93, 278), 'minecraft:clock', 2)] vs [((-269, 93, 278), 'minecraft:clock', 2)]"
+  ],
+  [
+   "all 8 armor stands in place with rotated yaw",
+   true,
+   "[((-284.5, 76.0, 254.5), 270.0), ((-284.5, 76.0, 257.5), 270.0), ((-284.5, 91.0, 270.5), 90.0)]"
+  ],
+  [
+   "unsupported attachments in the real world",
+   true,
+   "[]"
+  ],
+  [
+   "fire hazards in the real world",
+   true,
+   ""
+  ],
+  [
+   "real world: every room probe reachable on foot from the lawn and back",
+   true,
+   "19244 standing states, 0 one-way, unreachable []"
+  ],
+  [
+   "real world: no dark spawnable interior spots",
+   true,
+   "0"
+  ]
+ ]
+}

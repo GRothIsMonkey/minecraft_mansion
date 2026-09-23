@@ -1,0 +1,637 @@
+{
+  "project": "GRothIsMonkey/minecraft_mansion",
+  "branch": "astra/refurbishment",
+  "requested_commit_included": "48c3462f04651a84a4cc94d64dab97ae7dc4da1e",
+  "execution": {
+    "base_stages": 24,
+    "astra_stages": 10,
+    "total_stages": 34
+  },
+  "character_count_definition": "ASCII characters excluding the single trailing newline; bytes includes it",
+  "stages": [
+    {
+      "order": 1,
+      "edition": "Claude base",
+      "file": "commands_console/console_01.txt",
+      "chars": 29,
+      "bytes": 30,
+      "hash": "c046b411c7a91d88a193b669be1ff9d9f283fc7c",
+      "hash_algorithm": "sha1",
+      "completion": "Block placed",
+      "execution_order": 1
+    },
+    {
+      "order": 2,
+      "edition": "Claude base",
+      "file": "commands_console/console_02.txt",
+      "chars": 2634,
+      "bytes": 2635,
+      "hash": "bc33d45c42dd8dd8027322366ff4af9603b52f4b",
+      "hash_algorithm": "sha1",
+      "completion": "[Installer] Mansion Console Stage 2/24 complete. Next: paste console_03.txt",
+      "execution_order": 2
+    },
+    {
+      "order": 3,
+      "edition": "Claude base",
+      "file": "commands_console/console_03.txt",
+      "chars": 1902,
+      "bytes": 1903,
+      "hash": "af43f1c6b9fa584af840a9ec96d62a7c3b2de708",
+      "hash_algorithm": "sha1",
+      "completion": "[Installer] Mansion Console Stage 3/24 complete. Next: paste console_04.txt",
+      "execution_order": 3
+    },
+    {
+      "order": 4,
+      "edition": "Claude base",
+      "file": "commands_console/console_04.txt",
+      "chars": 2384,
+      "bytes": 2385,
+      "hash": "e937cd638c0b35ce8fb8965c17823be8970b804f",
+      "hash_algorithm": "sha1",
+      "completion": "[Installer] Mansion Console Stage 4/24 complete. Next: paste console_05.txt",
+      "execution_order": 4
+    },
+    {
+      "order": 5,
+      "edition": "Claude base",
+      "file": "commands_console/console_05.txt",
+      "chars": 15869,
+      "bytes": 15870,
+      "hash": "c0d6971ed7edd0a1e74c09a4fa6e904c0181fbd0",
+      "hash_algorithm": "sha1",
+      "completion": "[Installer] Mansion Console Stage 5/24 complete. Next: paste console_06.txt",
+      "execution_order": 5
+    },
+    {
+      "order": 6,
+      "edition": "Claude base",
+      "file": "commands_console/console_06.txt",
+      "chars": 15915,
+      "bytes": 15916,
+      "hash": "455f181b64e7cebb8b7ff8b9905697fc0ee06f65",
+      "hash_algorithm": "sha1",
+      "completion": "[Installer] Mansion Console Stage 6/24 complete. Next: paste console_07.txt",
+      "execution_order": 6
+    },
+    {
+      "order": 7,
+      "edition": "Claude base",
+      "file": "commands_console/console_07.txt",
+      "chars": 15855,
+      "bytes": 15856,
+      "hash": "83c505ec84acde0b06cd1358ab7d77c3eda1802f",
+      "hash_algorithm": "sha1",
+      "completion": "[Installer] Mansion Console Stage 7/24 complete. Next: paste console_08.txt",
+      "execution_order": 7
+    },
+    {
+      "order": 8,
+      "edition": "Claude base",
+      "file": "commands_console/console_08.txt",
+      "chars": 15879,
+      "bytes": 15880,
+      "hash": "9fb73dbbb9f9fa75c9ec3b10b6c1d32bfaed90ca",
+      "hash_algorithm": "sha1",
+      "completion": "[Installer] Mansion Console Stage 8/24 complete. Next: paste console_09.txt",
+      "execution_order": 8
+    },
+    {
+      "order": 9,
+      "edition": "Claude base",
+      "file": "commands_console/console_09.txt",
+      "chars": 15848,
+      "bytes": 15849,
+      "hash": "8131cea486ad51a56d506c4d86d6cecdf2b8bfa3",
+      "hash_algorithm": "sha1",
+      "completion": "[Installer] Mansion Console Stage 9/24 complete. Next: paste console_10.txt",
+      "execution_order": 9
+    },
+    {
+      "order": 10,
+      "edition": "Claude base",
+      "file": "commands_console/console_10.txt",
+      "chars": 15907,
+      "bytes": 15908,
+      "hash": "752089d5c4a59157bcb1516dcf8628eaf1350b67",
+      "hash_algorithm": "sha1",
+      "completion": "[Installer] Mansion Console Stage 10/24 complete. Next: paste console_11.txt",
+      "execution_order": 10
+    },
+    {
+      "order": 11,
+      "edition": "Claude base",
+      "file": "commands_console/console_11.txt",
+      "chars": 15861,
+      "bytes": 15862,
+      "hash": "06c52eb20c40dd296396e89c36b1388d6ad5ce53",
+      "hash_algorithm": "sha1",
+      "completion": "[Installer] Mansion Console Stage 11/24 complete. Next: paste console_12.txt",
+      "execution_order": 11
+    },
+    {
+      "order": 12,
+      "edition": "Claude base",
+      "file": "commands_console/console_12.txt",
+      "chars": 15768,
+      "bytes": 15769,
+      "hash": "27918b3c16737d3a18db6abee8db218c05078325",
+      "hash_algorithm": "sha1",
+      "completion": "[Installer] Mansion Console Stage 12/24 complete. Next: paste console_13.txt",
+      "execution_order": 12
+    },
+    {
+      "order": 13,
+      "edition": "Claude base",
+      "file": "commands_console/console_13.txt",
+      "chars": 15719,
+      "bytes": 15720,
+      "hash": "92c41ea4968b5c0fde84de789ff1f73a119bc684",
+      "hash_algorithm": "sha1",
+      "completion": "[Installer] Mansion Console Stage 13/24 complete. Next: paste console_14.txt",
+      "execution_order": 13
+    },
+    {
+      "order": 14,
+      "edition": "Claude base",
+      "file": "commands_console/console_14.txt",
+      "chars": 15919,
+      "bytes": 15920,
+      "hash": "efbbda4d6838f9187856d4146a0b2102f9a9c794",
+      "hash_algorithm": "sha1",
+      "completion": "[Installer] Mansion Console Stage 14/24 complete. Next: paste console_15.txt",
+      "execution_order": 14
+    },
+    {
+      "order": 15,
+      "edition": "Claude base",
+      "file": "commands_console/console_15.txt",
+      "chars": 15872,
+      "bytes": 15873,
+      "hash": "3b6f6e0a0837bbe65857052c180886b09617fe1c",
+      "hash_algorithm": "sha1",
+      "completion": "[Installer] Mansion Console Stage 15/24 complete. Next: paste console_16.txt",
+      "execution_order": 15
+    },
+    {
+      "order": 16,
+      "edition": "Claude base",
+      "file": "commands_console/console_16.txt",
+      "chars": 15873,
+      "bytes": 15874,
+      "hash": "296e3b3b45d9a1f6f92ec58659be363171693faf",
+      "hash_algorithm": "sha1",
+      "completion": "[Installer] Mansion Console Stage 16/24 complete. Next: paste console_17.txt",
+      "execution_order": 16
+    },
+    {
+      "order": 17,
+      "edition": "Claude base",
+      "file": "commands_console/console_17.txt",
+      "chars": 15882,
+      "bytes": 15883,
+      "hash": "61275f8b2580505bfbc119276465d8bd4e2f0f18",
+      "hash_algorithm": "sha1",
+      "completion": "[Installer] Mansion Console Stage 17/24 complete. Next: paste console_18.txt",
+      "execution_order": 17
+    },
+    {
+      "order": 18,
+      "edition": "Claude base",
+      "file": "commands_console/console_18.txt",
+      "chars": 15868,
+      "bytes": 15869,
+      "hash": "3f788632293656bc663dbe0bbafc09a2a09e24da",
+      "hash_algorithm": "sha1",
+      "completion": "[Installer] Mansion Console Stage 18/24 complete. Next: paste console_19.txt",
+      "execution_order": 18
+    },
+    {
+      "order": 19,
+      "edition": "Claude base",
+      "file": "commands_console/console_19.txt",
+      "chars": 15835,
+      "bytes": 15836,
+      "hash": "3a437ad64049e95d1d19e96e2fe3115ea4a92a69",
+      "hash_algorithm": "sha1",
+      "completion": "[Installer] Mansion Console Stage 19/24 complete. Next: paste console_20.txt",
+      "execution_order": 19
+    },
+    {
+      "order": 20,
+      "edition": "Claude base",
+      "file": "commands_console/console_20.txt",
+      "chars": 15886,
+      "bytes": 15887,
+      "hash": "ba51316a2a0efa855d5359ebb227819558033e06",
+      "hash_algorithm": "sha1",
+      "completion": "[Installer] Mansion Console Stage 20/24 complete. Next: paste console_21.txt",
+      "execution_order": 20
+    },
+    {
+      "order": 21,
+      "edition": "Claude base",
+      "file": "commands_console/console_21.txt",
+      "chars": 15899,
+      "bytes": 15900,
+      "hash": "179fa095bd2ec3449fc5964af1855c863e97cd30",
+      "hash_algorithm": "sha1",
+      "completion": "[Installer] Mansion Console Stage 21/24 complete. Next: paste console_22.txt",
+      "execution_order": 21
+    },
+    {
+      "order": 22,
+      "edition": "Claude base",
+      "file": "commands_console/console_22.txt",
+      "chars": 15867,
+      "bytes": 15868,
+      "hash": "30b17583f6af0d338228dcede8380ebfc8661d82",
+      "hash_algorithm": "sha1",
+      "completion": "[Installer] Mansion Console Stage 22/24 complete. Next: paste console_23.txt",
+      "execution_order": 22
+    },
+    {
+      "order": 23,
+      "edition": "Claude base",
+      "file": "commands_console/console_23.txt",
+      "chars": 15866,
+      "bytes": 15867,
+      "hash": "3eca021f91a009430f4889f97505caf9ce40b30a",
+      "hash_algorithm": "sha1",
+      "completion": "[Installer] Mansion Console Stage 23/24 complete. Next: paste console_24.txt",
+      "execution_order": 23
+    },
+    {
+      "order": 24,
+      "edition": "Claude base",
+      "file": "commands_console/console_24.txt",
+      "chars": 7459,
+      "bytes": 7460,
+      "hash": "91f852e33f5b08b84ba51007636ddf9f11e8125f",
+      "hash_algorithm": "sha1",
+      "completion": "[Installer] Mansion Console Stage 24/24 complete. Mansion construction complete.",
+      "execution_order": 24
+    },
+    {
+      "order": 1,
+      "edition": "Astra patch",
+      "file": "commands_astra/astra_01.txt",
+      "chars": 29,
+      "bytes": 30,
+      "hash": "4036b4cf00dce8da9a3781908e5cab399e722576945885deccd01b8a5890193a",
+      "hash_algorithm": "sha256",
+      "completion": "Block placed",
+      "execution_order": 25
+    },
+    {
+      "order": 2,
+      "edition": "Astra patch",
+      "file": "commands_astra/astra_02.txt",
+      "chars": 14828,
+      "bytes": 14829,
+      "hash": "ee557bcb65c554591a6bda68c1870f5860cf60b22d5ef58bc143963a740cc906",
+      "hash_algorithm": "sha256",
+      "completion": "[Astra] Astra Stage 2/10 complete. Next: paste astra_03.txt",
+      "execution_order": 26
+    },
+    {
+      "order": 3,
+      "edition": "Astra patch",
+      "file": "commands_astra/astra_03.txt",
+      "chars": 14886,
+      "bytes": 14887,
+      "hash": "01cfe6ed21e1c224903a2e666ae2f52e018f29046ffc7fa853d97311b80e2565",
+      "hash_algorithm": "sha256",
+      "completion": "[Astra] Astra Stage 3/10 complete. Next: paste astra_04.txt",
+      "execution_order": 27
+    },
+    {
+      "order": 4,
+      "edition": "Astra patch",
+      "file": "commands_astra/astra_04.txt",
+      "chars": 14813,
+      "bytes": 14814,
+      "hash": "e1586e3a38d3285f4e25862c797550a374348e58b147a00209368ef1f7c3da47",
+      "hash_algorithm": "sha256",
+      "completion": "[Astra] Astra Stage 4/10 complete. Next: paste astra_05.txt",
+      "execution_order": 28
+    },
+    {
+      "order": 5,
+      "edition": "Astra patch",
+      "file": "commands_astra/astra_05.txt",
+      "chars": 14835,
+      "bytes": 14836,
+      "hash": "bd612752b700d1a7ca5d203bf22761612225910ac079fc2dffb4ad16cad8f239",
+      "hash_algorithm": "sha256",
+      "completion": "[Astra] Astra Stage 5/10 complete. Next: paste astra_06.txt",
+      "execution_order": 29
+    },
+    {
+      "order": 6,
+      "edition": "Astra patch",
+      "file": "commands_astra/astra_06.txt",
+      "chars": 14888,
+      "bytes": 14889,
+      "hash": "be18d3a58894d54f69bca374dfcfaa7de23939a76008fa75e60811201acbecc2",
+      "hash_algorithm": "sha256",
+      "completion": "[Astra] Astra Stage 6/10 complete. Next: paste astra_07.txt",
+      "execution_order": 30
+    },
+    {
+      "order": 7,
+      "edition": "Astra patch",
+      "file": "commands_astra/astra_07.txt",
+      "chars": 14904,
+      "bytes": 14905,
+      "hash": "fd3b3c2d10064d29ddb4a4f099bdfeff9a48873e4d96d1d20633445797eb0126",
+      "hash_algorithm": "sha256",
+      "completion": "[Astra] Astra Stage 7/10 complete. Next: paste astra_08.txt",
+      "execution_order": 31
+    },
+    {
+      "order": 8,
+      "edition": "Astra patch",
+      "file": "commands_astra/astra_08.txt",
+      "chars": 14897,
+      "bytes": 14898,
+      "hash": "32984f17cceed9c67921ff8478e2deb471f82817e32d595793a012398ec6be30",
+      "hash_algorithm": "sha256",
+      "completion": "[Astra] Astra Stage 8/10 complete. Next: paste astra_09.txt",
+      "execution_order": 32
+    },
+    {
+      "order": 9,
+      "edition": "Astra patch",
+      "file": "commands_astra/astra_09.txt",
+      "chars": 14818,
+      "bytes": 14819,
+      "hash": "a749bd22ad70db80e829b21bea8fa2aa48fe1f758565b579a2a886f4ab2547bb",
+      "hash_algorithm": "sha256",
+      "completion": "[Astra] Astra Stage 9/10 complete. Next: paste astra_10.txt",
+      "execution_order": 33
+    },
+    {
+      "order": 10,
+      "edition": "Astra patch",
+      "file": "commands_astra/astra_10.txt",
+      "chars": 14344,
+      "bytes": 14345,
+      "hash": "d8778f3759eed1df1a6a5d8cbafa19620318d16bd85297ee4a13942cb15c52d3",
+      "hash_algorithm": "sha256",
+      "completion": "[Astra] Astra Stage 10/10 complete. Astra refurbishment complete.",
+      "execution_order": 34
+    }
+  ],
+  "coordinates": {
+    "entrance": [
+      -251,
+      73,
+      267
+    ],
+    "front_door_blocks": [
+      [
+        -251,
+        76,
+        266
+      ],
+      [
+        -251,
+        76,
+        267
+      ]
+    ],
+    "stand": [
+      -225,
+      73,
+      267
+    ],
+    "stand_chunk": [
+      -15,
+      16
+    ],
+    "installer_pad": [
+      -221,
+      124,
+      267
+    ],
+    "build_box_inclusive": [
+      -309,
+      62,
+      226,
+      -227,
+      118,
+      308
+    ]
+  },
+  "compatibility_audit": {
+    "server_view_distance_required": 6,
+    "maximum_stage_chunk_radius_from_stand": 5,
+    "one_chunk_safety_margin": true,
+    "spatial_split_required": false,
+    "reason": "Every stage remains within the six-chunk server-side loading envelope around the player stand; no distant unloaded chunk is required.",
+    "astra_stage_scopes": [
+      {
+        "stage": 1,
+        "scope": "installer pad only",
+        "chunk_x": [
+          -14,
+          -14
+        ],
+        "chunk_z": [
+          16,
+          16
+        ],
+        "radius_from_stand": 1
+      },
+      {
+        "stage": 2,
+        "bbox": [
+          -292,
+          76,
+          235,
+          -250,
+          118,
+          298
+        ],
+        "chunk_x": [
+          -19,
+          -16
+        ],
+        "chunk_z": [
+          14,
+          18
+        ],
+        "radius_from_stand": 4
+      },
+      {
+        "stage": 3,
+        "bbox": [
+          -257,
+          76,
+          235,
+          -250,
+          93,
+          298
+        ],
+        "chunk_x": [
+          -17,
+          -16
+        ],
+        "chunk_z": [
+          14,
+          18
+        ],
+        "radius_from_stand": 2
+      },
+      {
+        "stage": 4,
+        "bbox": [
+          -291,
+          76,
+          235,
+          -249,
+          103,
+          298
+        ],
+        "chunk_x": [
+          -19,
+          -16
+        ],
+        "chunk_z": [
+          14,
+          18
+        ],
+        "radius_from_stand": 4
+      },
+      {
+        "stage": 5,
+        "bbox": [
+          -308,
+          72,
+          232,
+          -227,
+          103,
+          301
+        ],
+        "chunk_x": [
+          -20,
+          -15
+        ],
+        "chunk_z": [
+          14,
+          18
+        ],
+        "radius_from_stand": 5
+      },
+      {
+        "stage": 6,
+        "bbox": [
+          -307,
+          73,
+          231,
+          -228,
+          82,
+          302
+        ],
+        "chunk_x": [
+          -20,
+          -15
+        ],
+        "chunk_z": [
+          14,
+          18
+        ],
+        "radius_from_stand": 5
+      },
+      {
+        "stage": 7,
+        "bbox": [
+          -293,
+          75,
+          236,
+          -251,
+          89,
+          297
+        ],
+        "chunk_x": [
+          -19,
+          -16
+        ],
+        "chunk_z": [
+          14,
+          18
+        ],
+        "radius_from_stand": 4
+      },
+      {
+        "stage": 8,
+        "bbox": [
+          -290,
+          83,
+          254,
+          -251,
+          96,
+          297
+        ],
+        "chunk_x": [
+          -19,
+          -16
+        ],
+        "chunk_z": [
+          15,
+          18
+        ],
+        "radius_from_stand": 4
+      },
+      {
+        "stage": 9,
+        "bbox": [
+          -286,
+          90,
+          237,
+          -252,
+          96,
+          296
+        ],
+        "chunk_x": [
+          -18,
+          -16
+        ],
+        "chunk_z": [
+          14,
+          18
+        ],
+        "radius_from_stand": 3
+      },
+      {
+        "stage": 10,
+        "bbox": [
+          -290,
+          68,
+          237,
+          -252,
+          103,
+          296
+        ],
+        "chunk_x": [
+          -19,
+          -16
+        ],
+        "chunk_z": [
+          14,
+          18
+        ],
+        "radius_from_stand": 4
+      }
+    ]
+  },
+  "validation_reports": [
+    "out/final_pre_console_check.log",
+    "out/astra_mc180_flat.log",
+    "out/astra_mc189_flat.log",
+    "out/astra_mc189_terrain.log",
+    "out/astra_check_final2.log"
+  ]
+}
